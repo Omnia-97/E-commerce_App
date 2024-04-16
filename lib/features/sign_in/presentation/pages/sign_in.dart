@@ -12,12 +12,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/enums/enums.dart';
 import '../../../../core/utils/app_images.dart';
 import '../bloc/sign_in_bloc.dart';
 
-class SignInPage extends StatelessWidget {
-  SignInPage({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
+
+  @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
   var emailController = TextEditingController();
+
   var passwordController = TextEditingController();
 
   @override
@@ -61,7 +69,6 @@ class SignInPage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             resizeToAvoidBottomInset: false,
-
             backgroundColor: AppColors.primaryColor,
             body: Padding(
               padding: EdgeInsets.only(left: 16.w),
@@ -80,7 +87,7 @@ class SignInPage extends StatelessWidget {
                       size: 100,
                     ),
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 86.h,
                   ),
                   Padding(
@@ -94,7 +101,7 @@ class SignInPage extends StatelessWidget {
                     AppStrings.please,
                     style: Styles.titleSmall,
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 40.h,
                   ),
                   Text(
@@ -108,14 +115,14 @@ class SignInPage extends StatelessWidget {
                     controller: emailController,
                     hintText: AppStrings.hintName,
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 32.h,
                   ),
                   Text(
                     AppStrings.passwordTitle,
                     style: Styles.titleMedian,
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 24.h,
                   ),
                   CustomTextFormField(
@@ -123,7 +130,7 @@ class SignInPage extends StatelessWidget {
                     hintText: AppStrings.hintPassword,
                     isPassword: true,
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 16.h,
                   ),
                   Padding(
@@ -135,12 +142,13 @@ class SignInPage extends StatelessWidget {
                           .copyWith(fontWeight: FontWeight.normal),
                     ),
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 56.h,
                   ),
                   Padding(
                     padding: EdgeInsets.only(right: 15.w),
                     child: CustomButton(
+                      text: AppStrings.signIn,
                       onPressed: () {
                         BlocProvider.of<SignInBloc>(context).add(
                           SignInButtonEvent(
@@ -155,7 +163,7 @@ class SignInPage extends StatelessWidget {
                     height: 32.h,
                   ),
                   Padding(
-                    padding:  EdgeInsets.only(right: 20.w, left: 5.w),
+                    padding: EdgeInsets.only(right: 20.w, left: 5.w),
                     child: Row(
                       children: [
                         Text(
@@ -163,8 +171,9 @@ class SignInPage extends StatelessWidget {
                           style: Styles.titleMedian,
                         ),
                         InkWell(
-                          onTap: (){
-                            navigatorKey.currentState!.pushNamed(PagesRouteName.signUp);
+                          onTap: () {
+                            navigatorKey.currentState!
+                                .pushNamed(PagesRouteName.signUp);
                           },
                           child: Text(
                             AppStrings.createAccount,

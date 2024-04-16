@@ -2,9 +2,10 @@ import 'package:e_commerce_app/features/sign_in/domain/entities/ResponseEntity.d
 
 class UserModel extends ResponseEntity {
   UserModel({
-      this.message, 
-      super.user,
-      super.token,});
+    this.message,
+    super.user,
+    super.token,
+  });
 
   UserModel.fromJson(dynamic json) {
     message = json['message'];
@@ -12,16 +13,14 @@ class UserModel extends ResponseEntity {
     token = json['token'];
   }
   String? message;
-
-
-
-
 }
 
 class User extends UserEntity {
-  User({super.name,
-      super.email,
-      this.role,});
+  User({
+    super.name,
+    super.email,
+    this.role,
+  });
 
   User.fromJson(dynamic json) {
     name = json['name'];
@@ -30,6 +29,4 @@ class User extends UserEntity {
   }
 
   String? role;
-
-
 }

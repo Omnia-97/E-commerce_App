@@ -3,6 +3,7 @@ import 'package:e_commerce_app/core/data/errors/failures.dart';
 import 'package:e_commerce_app/features/sign_in/domain/entities/ResponseEntity.dart';
 import 'package:meta/meta.dart';
 
+import '../../../../core/enums/enums.dart';
 import '../../domain/use_cases/signin_use_case.dart';
 
 part 'sign_in_event.dart';

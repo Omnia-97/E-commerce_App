@@ -1,12 +1,12 @@
-import 'package:e_commerce_app/core/utils/app_colors.dart';
-import 'package:e_commerce_app/core/utils/app_strings.dart';
+
 import 'package:e_commerce_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton ({super.key, this.onPressed});
+  const CustomButton ({super.key, this.onPressed, required this.text});
   final void Function()? onPressed;
+  final String text ;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
             )),
         child: Text(
-         AppStrings.signIn,
+         text,
           textAlign: TextAlign.center,
           style: Styles.buttonText,
         ),
