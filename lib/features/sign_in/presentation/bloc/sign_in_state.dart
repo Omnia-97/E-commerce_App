@@ -1,11 +1,6 @@
 part of 'sign_in_bloc.dart';
 
-enum ScreenStatus {
-  init,
-  loading,
-  success,
-  failure,
-}
+
 
 @immutable
 class SignInState {
