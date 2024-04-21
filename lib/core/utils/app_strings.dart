@@ -19,5 +19,11 @@ class AppStrings{
   static const String email='E-mail address';
   static const String emailHint='enter your email address';
   static const String haveAccount ='Already have an account ?';
+  static const String hintSearchForm = 'what do you search for?';
+  static const String categories = 'Categories';
+  static const String viewAll = 'view all';
+  static const String brands = 'Brands';
+  static const String shopNow = 'Shop Now';
+
 
 }

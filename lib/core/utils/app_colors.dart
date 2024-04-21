@@ -8,5 +8,9 @@ class AppColors{
   static const Color whiteColor = Color(0xFFFFFFFF);
   static Color hintColor = const Color(0xFF000000).withOpacity(0.7);
   static const Color eyeColor = Color(0xFF808080);
+  static const Color categoryItemColor = Color(0xFFD9D9D9);
+
+
+
 
 }

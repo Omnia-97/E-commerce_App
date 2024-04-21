@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/config/routes/pages_route_name.dart';
 import 'package:e_commerce_app/features/sign_in/presentation/pages/sign_in.dart';
 import 'package:e_commerce_app/features/sign_up/presentation/pages/sign_up.dart';
+import 'package:e_commerce_app/layout_screen.dart';
 import 'package:flutter/material.dart';
 import '../../features/home/presentation/pages/home.dart';
 import '../../features/splash/splash_page.dart';
@@ -10,32 +11,37 @@ class AppRoutes {
     switch (settings.name) {
       case PagesRouteName.splash:
         return MaterialPageRoute(
-          builder: (context) => SplashPage(),
-          settings: settings
+          builder: (context) => const SplashPage(),
+          settings: settings,
         );
-        case PagesRouteName.signIn:
+      case PagesRouteName.signIn:
         return MaterialPageRoute(
-          builder: (context) => SignInPage(),
-          settings: settings
+          builder: (context) => const SignInPage(),
+          settings: settings,
         );
-        case PagesRouteName.signUp:
+      case PagesRouteName.signUp:
         return MaterialPageRoute(
-          builder: (context) => SignUpPage(),
-          settings: settings
+          builder: (context) => const SignUpPage(),
+          settings: settings,
         );
-        case PagesRouteName.home:
+      case PagesRouteName.home:
         return MaterialPageRoute(
-          builder: (context) => HomePage(),
-          settings: settings
+          builder: (context) => const HomePage(),
+          settings: settings,
         );
-        default:
-          return MaterialPageRoute(
-            builder: (_) => Scaffold(
-              body: Center(
-                child: Text('No route defined for ${settings.name}'),
-              ),
+      case PagesRouteName.layout:
+        return MaterialPageRoute(
+          builder: (context) => const LayoutScreen(),
+          settings: settings,
+        );
+      default:
+        return MaterialPageRoute(
+          builder: (_) => Scaffold(
+            body: Center(
+              child: Text('No route defined for ${settings.name}'),
             ),
-          );
+          ),
+        );
     }
   }
 }
