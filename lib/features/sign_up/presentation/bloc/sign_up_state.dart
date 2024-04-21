@@ -1,12 +1,12 @@
 part of 'sign_up_bloc.dart';
 
 class SignUpState {
-  ScreenStatus? status;
+  RequestStatus? status;
   SignUpModel? model;
   Failures? failures;
   SignUpState({this.status, this.model, this.failures});
   SignUpState copyWith({
-    ScreenStatus? status,
+    RequestStatus? status,
     SignUpModel? model,
     Failures? failures,
   }) {
@@ -19,5 +19,5 @@ class SignUpState {
 }
 
 final class SignUpInitialState extends SignUpState {
-  SignUpInitialState() : super(status: ScreenStatus.init);
+  SignUpInitialState() : super(status: RequestStatus.init);
 }

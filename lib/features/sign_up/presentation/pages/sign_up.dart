@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/routes/pages_route_name.dart';
-import '../../../../core/components/reuseable_components/custom_button.dart';
-import '../../../../core/components/reuseable_components/custom_text_form_field.dart';
+import '../../../../core/components/reusable_components/custom_button.dart';
+import '../../../../core/components/reusable_components/custom_text_form_field.dart';
 import '../../../../core/enums/enums.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
@@ -44,7 +44,7 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
       child: BlocConsumer<SignUpBloc, SignUpState>(
         listener: (context, state) {
-          if (state.status == ScreenStatus.loading) {
+          if (state.status == RequestStatus.loading) {
             showDialog(
               context: context,
               builder: (context) => const Center(
@@ -53,10 +53,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
             );
-          } else if (state.status == ScreenStatus.success) {
-            navigatorKey.currentState!
-                .pushNamedAndRemoveUntil(PagesRouteName.home, (route) => false);
-          } else if (state.status == ScreenStatus.failure) {
+          } else if (state.status == RequestStatus.success) {
+            navigatorKey.currentState!.pushNamedAndRemoveUntil(
+                PagesRouteName.layout, (route) => false);
+          } else if (state.status == RequestStatus.failure) {
             showDialog(
               context: context,
               builder: (context) => Center(

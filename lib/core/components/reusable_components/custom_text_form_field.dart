@@ -40,7 +40,6 @@ class _CustomTextFormFieldRegisterState
       padding: EdgeInsets.only(right: 16.w),
       child: TextFormField(
         onTap: widget.onTap,
-
         onChanged: widget.onChanged,
         validator: widget.onValidate,
         onSaved: widget.onSaved,

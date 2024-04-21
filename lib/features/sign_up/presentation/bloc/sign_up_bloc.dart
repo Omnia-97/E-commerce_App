@@ -15,8 +15,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       var result = await signUpUseCase(event.request);
       result.fold(
           (l) =>
-              emit(state.copyWith(status: ScreenStatus.failure, failures: l)),
-          (r) => emit(state.copyWith(status: ScreenStatus.success, model: r)));
+              emit(state.copyWith(status: RequestStatus.failure, failures: l)),
+          (r) => emit(state.copyWith(status: RequestStatus.success, model: r)));
     });
   }
 }

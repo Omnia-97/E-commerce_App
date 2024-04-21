@@ -1,6 +1,4 @@
 import 'package:e_commerce_app/config/routes/pages_route_name.dart';
-import 'package:e_commerce_app/core/components/reuseable_components/custom_button.dart';
-import 'package:e_commerce_app/core/components/reuseable_components/custom_text_form_field.dart';
 import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/core/utils/app_strings.dart';
 import 'package:e_commerce_app/core/utils/styles.dart';
@@ -12,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/components/reusable_components/custom_button.dart';
+import '../../../../core/components/reusable_components/custom_text_form_field.dart';
 import '../../../../core/enums/enums.dart';
 import '../../../../core/utils/app_images.dart';
 import '../bloc/sign_in_bloc.dart';
@@ -40,7 +40,7 @@ class _SignInPageState extends State<SignInPage> {
       ),
       child: BlocConsumer<SignInBloc, SignInState>(
         listener: (context, state) {
-          if (state.status == ScreenStatus.loading) {
+          if (state.status == RequestStatus.loading) {
             showDialog(
               context: context,
               builder: (context) => const Center(
@@ -49,10 +49,10 @@ class _SignInPageState extends State<SignInPage> {
                 ),
               ),
             );
-          } else if (state.status == ScreenStatus.success) {
-            navigatorKey.currentState!
-                .pushNamedAndRemoveUntil(PagesRouteName.home, (route) => false);
-          } else if (state.status == ScreenStatus.failure) {
+          } else if (state.status == RequestStatus.success) {
+            navigatorKey.currentState!.pushNamedAndRemoveUntil(
+                PagesRouteName.layout, (route) => false);
+          } else if (state.status == RequestStatus.failure) {
             showDialog(
               context: context,
               builder: (context) => Center(

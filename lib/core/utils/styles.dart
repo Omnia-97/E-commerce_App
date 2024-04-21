@@ -30,6 +30,26 @@ class Styles {
     fontWeight: FontWeight.w300,
     color: AppColors.hintColor,
   );
+  static TextStyle hintTextSearch = GoogleFonts.poppins(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w300,
+    color: AppColors.textColor.withOpacity(0.6),
+  );
+  static TextStyle viewText = GoogleFonts.poppins(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textColor,
+  );
+  static TextStyle categoryText = GoogleFonts.poppins(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textColor,
+  );
+  static TextStyle categoryTextBanner = GoogleFonts.poppins(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.textColor,
+  );
 
 
 }

@@ -16,12 +16,12 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       // TODO: implement event handler
     });
     on<SignInButtonEvent>((event, emit) async{
-      emit(state.copyWith(status: ScreenStatus.loading));
+      emit(state.copyWith(status: RequestStatus.loading));
       var result = await signInUseCase(event.email,event.password);
       result.fold((l) {
-        emit(state.copyWith(status: ScreenStatus.failure, failures: l));
+        emit(state.copyWith(status: RequestStatus.failure, failures: l));
       } , (r) {
-        emit(state.copyWith(status: ScreenStatus.success, responseEntity: r));
+        emit(state.copyWith(status: RequestStatus.success, responseEntity: r));
       });
 
     } );

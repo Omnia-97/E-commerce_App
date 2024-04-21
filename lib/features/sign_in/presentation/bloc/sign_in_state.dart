@@ -4,12 +4,12 @@ part of 'sign_in_bloc.dart';
 
 @immutable
 class SignInState {
-  ScreenStatus? status;
+  RequestStatus? status;
    ResponseEntity? responseEntity;
   Failures? failures;
   SignInState({this.status, this.responseEntity, this.failures});
   SignInState copyWith({
-   ScreenStatus? status,
+   RequestStatus? status,
    ResponseEntity? responseEntity,
    Failures? failures,
   }
@@ -23,5 +23,5 @@ class SignInState {
 }
 
  class SignInInitialState extends SignInState {
- SignInInitialState():super(status: ScreenStatus.init);
+ SignInInitialState():super(status: RequestStatus.init);
  }
