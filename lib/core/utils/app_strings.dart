@@ -24,6 +24,10 @@ class AppStrings{
   static const String viewAll = 'view all';
   static const String brands = 'Brands';
   static const String shopNow = 'Shop Now';
+  static const String egp = 'EGP';
+  static const String sold = 'sold';
+  static const String description = 'Description';
+  static const String totalPrice = 'Total price';
 
 
 }

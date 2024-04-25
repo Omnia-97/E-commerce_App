@@ -8,6 +8,7 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       elevation: 0.0,
       backgroundColor: Colors.transparent,
+      iconTheme: IconThemeData(color: AppColors.primaryColor),
 
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

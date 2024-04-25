@@ -29,7 +29,7 @@ class SearchTextFormField extends StatelessWidget {
           hintText: AppStrings.hintSearchForm,
           hintStyle: Styles.hintTextSearch,
           prefixIcon: const ImageIcon(
-            AssetImage(AppImages.preIcon),
+            AssetImage(AppImages.preSearch),
             color: AppColors.primaryColor,
             size: 24,
           ),

@@ -50,6 +50,11 @@ class Styles {
     fontWeight: FontWeight.w700,
     color: AppColors.textColor,
   );
+  static TextStyle appBarTitle =   GoogleFonts.poppins(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.textColor,
+  );
 
 
 }
