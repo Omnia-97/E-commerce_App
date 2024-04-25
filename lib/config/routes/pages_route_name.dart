@@ -4,4 +4,6 @@ class PagesRouteName {
   static const String signUp = '/sign_up';
   static const String home = '/home';
   static const String layout = '/layout';
+  static const String products = '/products';
+  static const String productDetails = '/productDetails';
 }

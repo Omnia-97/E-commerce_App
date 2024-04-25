@@ -1,10 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce_app/config/routes/pages_route_name.dart';
 import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/core/utils/app_strings.dart';
 import 'package:e_commerce_app/core/utils/styles.dart';
 import 'package:e_commerce_app/features/Categories/presentation/bloc/categories_tab_bloc.dart';
 import 'package:e_commerce_app/features/Categories/presentation/widgets/sub_category_item.dart';
+import 'package:e_commerce_app/features/products/presentation/bloc/products_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SubCategoryWidget extends StatelessWidget {
@@ -37,47 +40,53 @@ class SubCategoryWidget extends StatelessWidget {
         SizedBox(
           height: 16.h,
         ),
-        CachedNetworkImage(
-          imageUrl: categoryImageUrl,
-          imageBuilder: (context, imageProvider) => Container(
-            width: 237.w,
-            height: 94.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
-              color: AppColors.frameColor,
-              image: DecorationImage(
-                image: imageProvider,
-                fit: BoxFit.cover,
-                opacity: 0.8,
+        InkWell(
+          onTap: (){
+           /* Navigator.pushNamed(context, PagesRouteName.products,);
+            BlocProvider.of<ProductsBloc>(context).add(const GetAllProductsEvent());*/
+          },
+          child: CachedNetworkImage(
+            imageUrl: categoryImageUrl,
+            imageBuilder: (context, imageProvider) => Container(
+              width: 237.w,
+              height: 94.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                color: AppColors.frameColor,
+                image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+                  opacity: 0.8,
+                ),
+              ),
+              child: Padding(
+                padding:  EdgeInsets.only(left: 16.w, top: 10.h
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      categoryName,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: Styles.categoryTextBanner,
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    customShopButton(),
+                  ],
+                ),
               ),
             ),
-            child: Padding(
-              padding:  EdgeInsets.only(left: 16.w, top: 10.h
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    categoryName,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: Styles.categoryTextBanner,
-                  ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  customShopButton(),
-                ],
+            progressIndicatorBuilder: (context, url, downloadProgress) => Center(
+              child: CircularProgressIndicator(
+                value: downloadProgress.progress,
+                color: AppColors.primaryColor,
               ),
             ),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
-          progressIndicatorBuilder: (context, url, downloadProgress) => Center(
-            child: CircularProgressIndicator(
-              value: downloadProgress.progress,
-              color: AppColors.primaryColor,
-            ),
-          ),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
         SizedBox(
           height: 6.h,

@@ -3,7 +3,6 @@ import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/features/Categories/presentation/bloc/categories_tab_bloc.dart';
 import 'package:e_commerce_app/features/Categories/presentation/widgets/category_tab_item.dart';
 import 'package:e_commerce_app/features/Categories/presentation/widgets/sub_category_widget.dart';
-import 'package:e_commerce_app/features/home/data/models/categories_model.dart';
 import 'package:e_commerce_app/features/home/presentation/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,10 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/enums/enums.dart';
 
 class CategoriesPage extends StatelessWidget {
-  CategoriesPage({super.key});
+  const CategoriesPage({super.key});
 
-  //CategoriesModel? categoriesModel;
-  String? id;
 
   @override
   Widget build(BuildContext context) {
@@ -163,10 +160,7 @@ class CategoriesPage extends StatelessWidget {
                                   .state
                                   .categoriesModel
                                   ?.data?[
-                              BlocProvider.of<CategoriesTabBloc>(
-                                  context)
-                                  .state
-                                  .selectedCategoryIndex]
+                              state.selectedCategoryIndex]
                                   .id ??
                                   ""));
                             }

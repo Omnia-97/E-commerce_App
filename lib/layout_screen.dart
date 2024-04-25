@@ -3,10 +3,12 @@ import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/features/Categories/presentation/pages/categories_page.dart';
 import 'package:e_commerce_app/features/account/presentation/pages/account_page.dart';
 import 'package:e_commerce_app/features/home/presentation/pages/home.dart';
+import 'package:e_commerce_app/features/products/presentation/pages/products_page.dart';
 import 'package:e_commerce_app/features/wish_list/presentation/pages/wish_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'config.dart';
 import 'core/components/reusable_components/bottom_active_icon.dart';
@@ -50,13 +52,9 @@ class _LayoutScreenState extends State<LayoutScreen> {
                     children: [
                       const SearchTextFormField(),
                       SizedBox(
-                        width: 22.w,
+                        width: 20.w,
                       ),
-                      const ImageIcon(
-                        AssetImage(AppImages.shoppingIc),
-                        color: AppColors.primaryColor,
-                        size: 24,
-                      ),
+                      SvgPicture.asset(AppImages.shoppingIc,width: 28.w,height: 28.h,),
                     ],
                   ),
                 ],
@@ -131,7 +129,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
 
 List<Widget> tabs = [
   const HomePage(),
-   CategoriesPage(),
+   ProductsPage(),
   const WishListPage(),
   const AccountPage()
 ];
