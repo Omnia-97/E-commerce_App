@@ -14,16 +14,19 @@ class ProductItemWidget extends StatelessWidget {
     super.key,
     this.data,
     required this.index,
+    required this.onTap,
   });
   final int index;
   final List<Data>? data;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     var product = data?[index];
     return InkWell(
-      onTap: (){
-        Navigator.pushNamed(context, PagesRouteName.productDetails, arguments: product);
+      onTap: () {
+        Navigator.pushNamed(context, PagesRouteName.productDetails,
+            arguments: product);
       },
       child: Container(
         width: 191.w,
@@ -56,14 +59,15 @@ class ProductItemWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    progressIndicatorBuilder: (context, url, downloadProgress) =>
-                        Center(
+                    progressIndicatorBuilder:
+                        (context, url, downloadProgress) => Center(
                       child: CircularProgressIndicator(
                         value: downloadProgress.progress,
                         color: AppColors.primaryColor,
                       ),
                     ),
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                   ),
                 ),
                 const BottomActiveIcon(
@@ -101,11 +105,32 @@ class ProductItemWidget extends StatelessWidget {
                   SizedBox(
                     height: 8.h,
                   ),
-                  Text(
-                    "EGP ${product?.price?.toString() ?? " "}",
-                    style: Styles.categoryText,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                  Row(
+                    children: [
+                      Text(
+                        "EGP ${product?.price?.toString() ?? " "}",
+                        style: Styles.categoryText,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(
+                        width: 16.w,
+                      ),
+                      if (product?.priceAfterDiscount != null &&
+                          product?.priceAfterDiscount != 0 &&
+                          product?.priceAfterDiscount != product?.price) ...[
+                        Text(
+                          "${product?.priceAfterDiscount?.toString() ?? " "} EGP",
+                          style: Styles.viewText.copyWith(
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor:
+                                AppColors.primaryColor.withOpacity(0.6),
+                            decorationThickness: 1,
+                            color: AppColors.primaryColor.withOpacity(0.6),
+                          ),
+                        ),
+                      ]
+                    ],
                   ),
                   Row(
                     children: [
@@ -131,10 +156,15 @@ class ProductItemWidget extends StatelessWidget {
                       SizedBox(
                         width: 48.w,
                       ),
-                      SvgPicture.asset(
-                        AppImages.plusCircle,
-                        width: 32.w,
-                        height: 32.h,
+                      InkWell(
+                        onTap: () {
+                          onTap();
+                        },
+                        child: SvgPicture.asset(
+                          AppImages.plusCircle,
+                          width: 32.w,
+                          height: 32.h,
+                        ),
                       ),
                     ],
                   ),
