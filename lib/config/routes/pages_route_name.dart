@@ -6,4 +6,5 @@ class PagesRouteName {
   static const String layout = '/layout';
   static const String products = '/products';
   static const String productDetails = '/productDetails';
+  static const String cartPage = '/cartPage';
 }

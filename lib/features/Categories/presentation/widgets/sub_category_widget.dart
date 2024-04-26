@@ -42,8 +42,7 @@ class SubCategoryWidget extends StatelessWidget {
         ),
         InkWell(
           onTap: (){
-           /* Navigator.pushNamed(context, PagesRouteName.products,);
-            BlocProvider.of<ProductsBloc>(context).add(const GetAllProductsEvent());*/
+            Navigator.pushNamed(context, PagesRouteName.products,);
           },
           child: CachedNetworkImage(
             imageUrl: categoryImageUrl,

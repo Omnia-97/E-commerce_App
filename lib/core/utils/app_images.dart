@@ -17,4 +17,5 @@ class AppImages{
   static const String preSearch = 'assets/icons/pre_search.png';
   static const String icAddItem = 'assets/icons/ic_add.svg';
   static const String icSubtractItem = 'assets/icons/ic_subtract.svg';
+  static const String icAddToCart = 'assets/icons/ic_add_to_cart.svg';
 }

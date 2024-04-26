@@ -28,6 +28,9 @@ class AppStrings{
   static const String sold = 'sold';
   static const String description = 'Description';
   static const String totalPrice = 'Total price';
+  static const String addToCart = 'Add To Cart';
+  static const String brand = 'Brand';
+  static const String cart = 'Cart';
 
 
 }

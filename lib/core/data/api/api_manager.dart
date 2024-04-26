@@ -7,10 +7,14 @@ class ApiManager{
   ApiManager(){
     dio = Dio();
   }
-  Future<Response> getData(String endPoint,{Map<String, dynamic>? queryParam} ){
-    return dio.get(Constants.baseUrl + endPoint , queryParameters: queryParam );
+  Future<Response> getData(String endPoint,{Map<String, dynamic>? queryParam,Map<String, dynamic>? headers} ){
+    return dio.get(Constants.baseUrl + endPoint , queryParameters: queryParam,options: Options(
+      headers: headers,
+    ) );
   }
-  Future<Response> postData(String endPoint, {Map<String, dynamic>? body}){
-    return dio.post(Constants.baseUrl + endPoint, data: body);
+  Future<Response> postData(String endPoint, {Map<String, dynamic>? body, Map<String, dynamic>? headers}){
+    return dio.post(Constants.baseUrl + endPoint, data: body, options: Options(
+      headers: headers,
+    ));
   }
 }

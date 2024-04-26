@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/config/routes/pages_route_name.dart';
+import 'package:e_commerce_app/features/cart/presentation/pages/cart_page.dart';
 import 'package:e_commerce_app/features/product_details/presentation/pages/product_details_page.dart';
 import 'package:e_commerce_app/features/products/presentation/pages/products_page.dart';
 import 'package:e_commerce_app/features/sign_in/presentation/pages/sign_in.dart';
@@ -36,6 +37,7 @@ class AppRoutes {
           builder: (context) => const LayoutScreen(),
           settings: settings,
         );
+
       case PagesRouteName.products:
         return MaterialPageRoute(
           builder: (context) => const ProductsPage(),
@@ -43,7 +45,12 @@ class AppRoutes {
         );
       case PagesRouteName.productDetails:
         return MaterialPageRoute(
-          builder: (context) =>  ProductDetailsPage(),
+          builder: (context) => ProductDetailsPage(),
+          settings: settings,
+        );
+      case PagesRouteName.cartPage:
+        return MaterialPageRoute(
+          builder: (context) => const CartPage(),
           settings: settings,
         );
       default:

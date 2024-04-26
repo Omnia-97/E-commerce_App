@@ -13,13 +13,12 @@ import '../../../../core/enums/enums.dart';
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<CategoriesTabBloc>(),
       child: Padding(
-        padding: EdgeInsets.only(left: 16.w,right: 7.w),
+        padding: EdgeInsets.only(left: 16.w, right: 7.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,77 +98,68 @@ class CategoriesPage extends StatelessWidget {
                 SizedBox(
                   width: 20.w,
                 ),
-                BlocProvider(
-                  create: (context) =>
-                      getIt<HomeBloc>()..add(const GetCategoriesEvent()),
-                  child: BlocConsumer<HomeBloc, HomeState>(
-                    listener: (context, state) {},
-                    builder: (context, state) {
-                      if (state.getCategoriesStatus == RequestStatus.success ||
-                          BlocProvider.of<CategoriesTabBloc>(context)
-                                  .state
-                                  .selectedCategoryIndex !=
-                              -1) {
-                        return BlocConsumer<CategoriesTabBloc,
-                            CategoriesTabState>(
-                          builder: (context, state) {
-                            return SubCategoryWidget(
-                              categoryName: BlocProvider.of<HomeBloc>(context)
-                                      .state
-                                      .categoriesModel
-                                      ?.data?[
-                                          BlocProvider.of<CategoriesTabBloc>(
-                                                  context)
-                                              .state
-                                              .selectedCategoryIndex]
-                                      .name ??
-                                  "",
-                              categoryImageUrl:
-                                  BlocProvider.of<HomeBloc>(context)
-                                          .state
-                                          .categoriesModel
-                                          ?.data?[BlocProvider.of<
-                                                  CategoriesTabBloc>(context)
-                                              .state
-                                              .selectedCategoryIndex]
-                                          .image ??
-                                      "",
-                              state: state,
-                              subCategoryName: state
-                                      .subCategoriesModel
-                                      ?.data?[state.selectedCategoryIndex]
-                                      .name ??
-                                  "",
-                              subImageUrl: BlocProvider.of<HomeBloc>(context)
-                                      .state
-                                      .categoriesModel
-                                      ?.data?[
-                                          BlocProvider.of<CategoriesTabBloc>(
-                                                  context)
-                                              .state
-                                              .selectedCategoryIndex]
-                                      .image ??
-                                  "",
-                            );
-                          },
-                          listener: (context, state) {
-                            if (state.getCategoriesTabStatus ==
-                                RequestStatus.success) {
-                              BlocProvider.of<CategoriesTabBloc>(context)
-                                  .add(GetSubCategoriesEvent(BlocProvider.of<HomeBloc>(context)
-                                  .state
-                                  .categoriesModel
-                                  ?.data?[
-                              state.selectedCategoryIndex]
-                                  .id ??
-                                  ""));
-                            }
-                          },
-                        );
-                      }
-                      return Container();
-                    },
-                  ),
+                BlocConsumer<HomeBloc, HomeState>(
+                  listener: (context, state) {},
+                  builder: (context, state) {
+                    if (state.getCategoriesStatus == RequestStatus.success ||
+                        BlocProvider.of<CategoriesTabBloc>(context)
+                                .state
+                                .selectedCategoryIndex !=
+                            -1) {
+                      return BlocConsumer<CategoriesTabBloc,
+                          CategoriesTabState>(
+                        builder: (context, state) {
+                          return SubCategoryWidget(
+                            categoryName: BlocProvider.of<HomeBloc>(context)
+                                    .state
+                                    .categoriesModel
+                                    ?.data?[BlocProvider.of<CategoriesTabBloc>(
+                                            context)
+                                        .state
+                                        .selectedCategoryIndex]
+                                    .name ??
+                                "",
+                            categoryImageUrl: BlocProvider.of<HomeBloc>(context)
+                                    .state
+                                    .categoriesModel
+                                    ?.data?[BlocProvider.of<CategoriesTabBloc>(
+                                            context)
+                                        .state
+                                        .selectedCategoryIndex]
+                                    .image ??
+                                "",
+                            state: state,
+                            subCategoryName: state.subCategoriesModel
+                                    ?.data?[state.selectedCategoryIndex].name ??
+                                "",
+                            subImageUrl: BlocProvider.of<HomeBloc>(context)
+                                    .state
+                                    .categoriesModel
+                                    ?.data?[BlocProvider.of<CategoriesTabBloc>(
+                                            context)
+                                        .state
+                                        .selectedCategoryIndex]
+                                    .image ??
+                                "",
+                          );
+                        },
+                        listener: (context, state) {
+                          if (state.getCategoriesTabStatus ==
+                              RequestStatus.success) {
+                            BlocProvider.of<CategoriesTabBloc>(context).add(
+                                GetSubCategoriesEvent(
+                                    BlocProvider.of<HomeBloc>(context)
+                                            .state
+                                            .categoriesModel
+                                            ?.data?[state.selectedCategoryIndex]
+                                            .id ??
+                                        ""));
+                          }
+                        },
+                      );
+                    }
+                    return Container();
+                  },
                 ),
               ],
             )
