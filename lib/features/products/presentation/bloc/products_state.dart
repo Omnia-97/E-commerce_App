@@ -9,6 +9,7 @@ class ProductsState with _$ProductsState {
    @Default(RequestStatus.init) RequestStatus getProductToCartStatus,
    @Default(0) int cartItemLength,
     AllProductsModel? allProductsModel,
+    GetCartModel? getCartModel,
     Failures? allProductsFailure,
 }) = _ProductsState;
 }

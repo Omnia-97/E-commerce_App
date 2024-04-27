@@ -207,7 +207,7 @@ class ProductDetailsPage extends StatelessWidget {
                 ),
                 const AddToCartButton(),
               ],
-            )
+            ),
           ],
         ),
       ),

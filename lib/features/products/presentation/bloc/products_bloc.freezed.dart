@@ -590,6 +590,7 @@ mixin _$ProductsState {
       throw _privateConstructorUsedError;
   int get cartItemLength => throw _privateConstructorUsedError;
   AllProductsModel? get allProductsModel => throw _privateConstructorUsedError;
+  GetCartModel? get getCartModel => throw _privateConstructorUsedError;
   Failures? get allProductsFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -610,6 +611,7 @@ abstract class $ProductsStateCopyWith<$Res> {
       RequestStatus getProductToCartStatus,
       int cartItemLength,
       AllProductsModel? allProductsModel,
+      GetCartModel? getCartModel,
       Failures? allProductsFailure});
 }
 
@@ -632,6 +634,7 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
     Object? getProductToCartStatus = null,
     Object? cartItemLength = null,
     Object? allProductsModel = freezed,
+    Object? getCartModel = freezed,
     Object? allProductsFailure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -659,6 +662,10 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
           ? _value.allProductsModel
           : allProductsModel // ignore: cast_nullable_to_non_nullable
               as AllProductsModel?,
+      getCartModel: freezed == getCartModel
+          ? _value.getCartModel
+          : getCartModel // ignore: cast_nullable_to_non_nullable
+              as GetCartModel?,
       allProductsFailure: freezed == allProductsFailure
           ? _value.allProductsFailure
           : allProductsFailure // ignore: cast_nullable_to_non_nullable
@@ -682,6 +689,7 @@ abstract class _$$ProductsStateImplCopyWith<$Res>
       RequestStatus getProductToCartStatus,
       int cartItemLength,
       AllProductsModel? allProductsModel,
+      GetCartModel? getCartModel,
       Failures? allProductsFailure});
 }
 
@@ -702,6 +710,7 @@ class __$$ProductsStateImplCopyWithImpl<$Res>
     Object? getProductToCartStatus = null,
     Object? cartItemLength = null,
     Object? allProductsModel = freezed,
+    Object? getCartModel = freezed,
     Object? allProductsFailure = freezed,
   }) {
     return _then(_$ProductsStateImpl(
@@ -729,6 +738,10 @@ class __$$ProductsStateImplCopyWithImpl<$Res>
           ? _value.allProductsModel
           : allProductsModel // ignore: cast_nullable_to_non_nullable
               as AllProductsModel?,
+      getCartModel: freezed == getCartModel
+          ? _value.getCartModel
+          : getCartModel // ignore: cast_nullable_to_non_nullable
+              as GetCartModel?,
       allProductsFailure: freezed == allProductsFailure
           ? _value.allProductsFailure
           : allProductsFailure // ignore: cast_nullable_to_non_nullable
@@ -747,6 +760,7 @@ class _$ProductsStateImpl implements _ProductsState {
       this.getProductToCartStatus = RequestStatus.init,
       this.cartItemLength = 0,
       this.allProductsModel,
+      this.getCartModel,
       this.allProductsFailure});
 
   @override
@@ -767,11 +781,13 @@ class _$ProductsStateImpl implements _ProductsState {
   @override
   final AllProductsModel? allProductsModel;
   @override
+  final GetCartModel? getCartModel;
+  @override
   final Failures? allProductsFailure;
 
   @override
   String toString() {
-    return 'ProductsState(status: $status, getAllProductsStatus: $getAllProductsStatus, addProductToCartStatus: $addProductToCartStatus, getProductToCartStatus: $getProductToCartStatus, cartItemLength: $cartItemLength, allProductsModel: $allProductsModel, allProductsFailure: $allProductsFailure)';
+    return 'ProductsState(status: $status, getAllProductsStatus: $getAllProductsStatus, addProductToCartStatus: $addProductToCartStatus, getProductToCartStatus: $getProductToCartStatus, cartItemLength: $cartItemLength, allProductsModel: $allProductsModel, getCartModel: $getCartModel, allProductsFailure: $allProductsFailure)';
   }
 
   @override
@@ -790,6 +806,8 @@ class _$ProductsStateImpl implements _ProductsState {
                 other.cartItemLength == cartItemLength) &&
             (identical(other.allProductsModel, allProductsModel) ||
                 other.allProductsModel == allProductsModel) &&
+            (identical(other.getCartModel, getCartModel) ||
+                other.getCartModel == getCartModel) &&
             (identical(other.allProductsFailure, allProductsFailure) ||
                 other.allProductsFailure == allProductsFailure));
   }
@@ -803,6 +821,7 @@ class _$ProductsStateImpl implements _ProductsState {
       getProductToCartStatus,
       cartItemLength,
       allProductsModel,
+      getCartModel,
       allProductsFailure);
 
   @JsonKey(ignore: true)
@@ -820,6 +839,7 @@ abstract class _ProductsState implements ProductsState {
       final RequestStatus getProductToCartStatus,
       final int cartItemLength,
       final AllProductsModel? allProductsModel,
+      final GetCartModel? getCartModel,
       final Failures? allProductsFailure}) = _$ProductsStateImpl;
 
   @override
@@ -834,6 +854,8 @@ abstract class _ProductsState implements ProductsState {
   int get cartItemLength;
   @override
   AllProductsModel? get allProductsModel;
+  @override
+  GetCartModel? get getCartModel;
   @override
   Failures? get allProductsFailure;
   @override

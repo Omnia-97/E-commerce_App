@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:e_commerce_app/core/data/errors/failures.dart';
 import 'package:e_commerce_app/core/enums/enums.dart';
 import 'package:e_commerce_app/features/products/data/models/all_products_model.dart';
+import 'package:e_commerce_app/features/products/data/models/get_cart_model.dart';
 import 'package:e_commerce_app/features/products/domain/use_cases/add_to_cart_use_case.dart';
 import 'package:e_commerce_app/features/products/domain/use_cases/get_cart_use_case.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -51,7 +52,7 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
         ));
       }, (r) {
         emit(state.copyWith(
-            getProductToCartStatus: RequestStatus.success,cartItemLength: r.numOfCartItems ?? 0),);
+            getProductToCartStatus: RequestStatus.success,cartItemLength: r.numOfCartItems ?? 0,getCartModel: r),);
       });
 
     });

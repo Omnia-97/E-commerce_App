@@ -18,4 +18,6 @@ class AppImages{
   static const String icAddItem = 'assets/icons/ic_add.svg';
   static const String icSubtractItem = 'assets/icons/ic_subtract.svg';
   static const String icAddToCart = 'assets/icons/ic_add_to_cart.svg';
+  static const String icDelete = 'assets/icons/ic_delete.svg';
+  static const String icCheckArrow = 'assets/icons/ic_check_arrow.svg';
 }
