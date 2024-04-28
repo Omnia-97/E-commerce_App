@@ -12,9 +12,9 @@ class AllProductsRepoImpl implements AllProductsRepo {
   AllProductsDS allProductsDS;
   AllProductsRepoImpl(this.allProductsDS);
   @override
-  Future<Either<Failures, AllProductsModel>> getAllProducts() async {
+  Future<Either<Failures, AllProductsModel>> getAllProducts(String id) async {
     try {
-      var result = await allProductsDS.getAllProducts();
+      var result = await allProductsDS.getAllProducts(id);
       return Right(result);
     } catch (e) {
       return Left(RemoteFailure(e.toString()));

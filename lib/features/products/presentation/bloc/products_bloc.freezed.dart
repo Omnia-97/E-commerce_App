@@ -19,7 +19,7 @@ mixin _$ProductsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllProducts,
+    required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
   }) =>
@@ -27,7 +27,7 @@ mixin _$ProductsEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllProducts,
+    TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
   }) =>
@@ -35,7 +35,7 @@ mixin _$ProductsEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllProducts,
+    TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
     required TResult orElse(),
@@ -125,7 +125,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllProducts,
+    required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
   }) {
@@ -136,7 +136,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllProducts,
+    TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
   }) {
@@ -147,7 +147,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllProducts,
+    TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
     required TResult orElse(),
@@ -205,6 +205,8 @@ abstract class _$$GetAllProductsEventImplCopyWith<$Res> {
   factory _$$GetAllProductsEventImplCopyWith(_$GetAllProductsEventImpl value,
           $Res Function(_$GetAllProductsEventImpl) then) =
       __$$GetAllProductsEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
 }
 
 /// @nodoc
@@ -214,61 +216,85 @@ class __$$GetAllProductsEventImplCopyWithImpl<$Res>
   __$$GetAllProductsEventImplCopyWithImpl(_$GetAllProductsEventImpl _value,
       $Res Function(_$GetAllProductsEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetAllProductsEventImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetAllProductsEventImpl implements GetAllProductsEvent {
-  const _$GetAllProductsEventImpl();
+  const _$GetAllProductsEventImpl(this.id);
+
+  @override
+  final String id;
 
   @override
   String toString() {
-    return 'ProductsEvent.getAllProducts()';
+    return 'ProductsEvent.getAllProducts(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAllProductsEventImpl);
+            other is _$GetAllProductsEventImpl &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllProductsEventImplCopyWith<_$GetAllProductsEventImpl> get copyWith =>
+      __$$GetAllProductsEventImplCopyWithImpl<_$GetAllProductsEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllProducts,
+    required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
   }) {
-    return getAllProducts();
+    return getAllProducts(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllProducts,
+    TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
   }) {
-    return getAllProducts?.call();
+    return getAllProducts?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllProducts,
+    TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
     required TResult orElse(),
   }) {
     if (getAllProducts != null) {
-      return getAllProducts();
+      return getAllProducts(id);
     }
     return orElse();
   }
@@ -312,7 +338,13 @@ class _$GetAllProductsEventImpl implements GetAllProductsEvent {
 }
 
 abstract class GetAllProductsEvent implements ProductsEvent {
-  const factory GetAllProductsEvent() = _$GetAllProductsEventImpl;
+  const factory GetAllProductsEvent(final String id) =
+      _$GetAllProductsEventImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$GetAllProductsEventImplCopyWith<_$GetAllProductsEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -383,7 +415,7 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllProducts,
+    required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
   }) {
@@ -394,7 +426,7 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllProducts,
+    TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
   }) {
@@ -405,7 +437,7 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllProducts,
+    TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
     required TResult orElse(),
@@ -505,7 +537,7 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllProducts,
+    required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
   }) {
@@ -516,7 +548,7 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllProducts,
+    TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
   }) {
@@ -527,7 +559,7 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllProducts,
+    TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
     required TResult orElse(),

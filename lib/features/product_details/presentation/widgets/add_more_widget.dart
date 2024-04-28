@@ -6,7 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddMoreWidget extends StatelessWidget {
-  const AddMoreWidget({super.key});
+  const AddMoreWidget({super.key, required this.quantity, required this.onSubtract, required this.onAdd});
+  final int quantity;
+  final VoidCallback onAdd;
+  final VoidCallback onSubtract;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +24,35 @@ class AddMoreWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-        SvgPicture.asset(AppImages.icSubtractItem),
-        SizedBox(width: 22.w,),
-        Text('1' , style: Styles.titleMedian,),
-        SizedBox(width: 21.w,),
-        SvgPicture.asset(AppImages.icAddItem),
+          InkWell(
+            onTap: (){
+              onSubtract();
 
-      ],),
+            },
+            child: SvgPicture.asset(
+              AppImages.icSubtractItem,
+            ),
+          ),
+          SizedBox(
+            width: 22.w,
+          ),
+          Text(
+            quantity.toString(),
+            style: Styles.titleMedian,
+          ),
+          SizedBox(
+            width: 21.w,
+          ),
+          InkWell(
+            onTap:(){
+              onAdd();
+            },
+            child: SvgPicture.asset(
+              AppImages.icAddItem,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

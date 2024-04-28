@@ -1,3 +1,4 @@
+import 'package:dio/src/response.dart';
 import 'package:e_commerce_app/core/caches/shared_preference.dart';
 import 'package:e_commerce_app/core/data/api/api_manager.dart';
 import 'package:e_commerce_app/core/data/api/end_points.dart';
@@ -11,8 +12,16 @@ import 'package:injectable/injectable.dart';
 class AllProductsDsImpl implements AllProductsDS {
   ApiManager apiManager = ApiManager();
   @override
-  Future<AllProductsModel> getAllProducts() async {
-    var response = await apiManager.getData(EndPoints.allProducts);
+  Future<AllProductsModel> getAllProducts(String id) async {
+    Response<dynamic> response;
+    if (id != "") {
+      response = await apiManager.getData(EndPoints.allProducts, queryParam: {
+        "category[in]": id,
+      });
+    } else {
+      response = await apiManager.getData(EndPoints.allProducts);
+    }
+
     AllProductsModel allProductsModel =
         AllProductsModel.fromJson(response.data);
     return allProductsModel;
@@ -37,8 +46,7 @@ class AllProductsDsImpl implements AllProductsDS {
     var response = await apiManager.getData(EndPoints.addToCart, headers: {
       "token": token,
     });
-    GetCartModel getCartModel =
-        GetCartModel.fromJson(response.data);
+    GetCartModel getCartModel = GetCartModel.fromJson(response.data);
     return getCartModel;
   }
 }

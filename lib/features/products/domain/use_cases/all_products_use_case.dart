@@ -8,8 +8,8 @@ import '../../data/models/all_products_model.dart';
 class AllProductsUseCase {
   AllProductsRepo allProductsRepo;
   AllProductsUseCase(this.allProductsRepo);
-  Future<Either<Failures, AllProductsModel>> call() async {
-    var result = await allProductsRepo.getAllProducts();
+  Future<Either<Failures, AllProductsModel>> call(String id) async {
+    var result = await allProductsRepo.getAllProducts(id);
     return result;
   }
 }

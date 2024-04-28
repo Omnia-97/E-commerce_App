@@ -7,15 +7,28 @@ import 'package:e_commerce_app/features/products/data/models/get_cart_model.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
 
-class CartItemWidget extends StatelessWidget {
+import '../../../../my_provider.dart';
+
+class CartItemWidget extends StatefulWidget {
   CartItemWidget({super.key, required this.products, required this.index});
   List<Products> products;
   final int index;
 
   @override
+  State<CartItemWidget> createState() => _CartItemWidgetState();
+}
+
+class _CartItemWidgetState extends State<CartItemWidget> {
+
+
+
+  @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<MyProvider>(context, listen: false);
+
     return Container(
       width: 389.w,
       height: 126.h,
@@ -29,7 +42,7 @@ class CartItemWidget extends StatelessWidget {
       child: Row(
         children: [
           CachedNetworkImage(
-            imageUrl: products[index].product?.imageCover ?? "",
+            imageUrl: widget.products[widget.index].product?.imageCover ?? "",
             imageBuilder: (context, imageProvider) => Container(
               width: 120.w,
               height: 126.h,
@@ -69,7 +82,7 @@ class CartItemWidget extends StatelessWidget {
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: ReadMoreText(
-                      products[index].product?.title ?? "",
+                      widget.products[widget.index].product?.title ?? "",
                       style: Styles.titleMedian
                           .copyWith(color: AppColors.textColor),
                       trimMode: TrimMode.Line,
@@ -86,7 +99,8 @@ class CartItemWidget extends StatelessWidget {
                 height: 13.h,
               ),
               CachedNetworkImage(
-                imageUrl: products[index].product?.brand?.image ?? "",
+                imageUrl:
+                    widget.products[widget.index].product?.brand?.image ?? "",
                 imageBuilder: (context, imageProvider) => Container(
                   width: 50.w,
                   height: 20.h,
@@ -111,7 +125,7 @@ class CartItemWidget extends StatelessWidget {
                 height: 16.h,
               ),
               Text(
-                " EGP ${products[index].price?.toString() ?? ""}",
+                " EGP ${widget.products[widget.index].price! * myProvider.getQuantity(widget.products[widget.index].product?.id ?? "")}",
                 style: Styles.titleMedian.copyWith(color: AppColors.textColor),
               ),
             ],
@@ -127,7 +141,19 @@ class CartItemWidget extends StatelessWidget {
               SizedBox(
                 height: 39.h,
               ),
-              const AddMoreWidget(),
+              AddMoreWidget(
+                  quantity: myProvider.getQuantity(
+                      widget.products[widget.index].product?.id ?? ""),
+                  onAdd: () {
+                    myProvider.addQuantity(
+                        widget.products[widget.index].product?.id ?? "",
+                        context);
+                  },
+                  onSubtract: () {
+                    myProvider.subtractQuantity(
+                        widget.products[widget.index].product?.id ?? "",
+                        context);
+                  }),
             ],
           ),
         ],

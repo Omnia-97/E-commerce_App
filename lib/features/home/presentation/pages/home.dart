@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/config.dart';
+import 'package:e_commerce_app/config/routes/pages_route_name.dart';
 import 'package:e_commerce_app/core/enums/enums.dart';
 import 'package:e_commerce_app/features/home/presentation/widgets/brand_item_widget.dart';
 import 'package:e_commerce_app/features/home/presentation/widgets/carousel_widget.dart';
@@ -56,6 +56,9 @@ class HomePage extends StatelessWidget {
                     itemCount: state.categoriesModel?.data?.length ?? 0,
                     itemBuilder: (context, index) {
                       return CategoryItem(
+                        onTap: (){
+                          Navigator.pushNamed(context, PagesRouteName.products, arguments: state.categoriesModel?.data?[index].id);
+                        },
                           categoryImageUrl:
                               state.categoriesModel?.data?[index].image ?? "",
                           categoryText:

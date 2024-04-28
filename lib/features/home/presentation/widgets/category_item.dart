@@ -9,35 +9,42 @@ class CategoryItem extends StatelessWidget {
     super.key,
     required this.categoryImageUrl,
     required this.categoryText,
+    required this.onTap,
   });
   final String categoryImageUrl;
   final String categoryText;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CachedNetworkImage(
-          imageUrl: categoryImageUrl,
-          imageBuilder: (context, imageProvider) => Container(
-            width: 100.w,
-            height: 100.h,
-            decoration: BoxDecoration(
-              color: AppColors.categoryItemColor,
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: imageProvider,
-                fit: BoxFit.cover,
+        InkWell(
+          onTap: (){
+            onTap();
+          },
+          child: CachedNetworkImage(
+            imageUrl: categoryImageUrl,
+            imageBuilder: (context, imageProvider) => Container(
+              width: 100.w,
+              height: 100.h,
+              decoration: BoxDecoration(
+                color: AppColors.categoryItemColor,
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          progressIndicatorBuilder: (context, url, downloadProgress) => Center(
-            child: CircularProgressIndicator(
-              value: downloadProgress.progress,
-              color: AppColors.primaryColor,
+            progressIndicatorBuilder: (context, url, downloadProgress) => Center(
+              child: CircularProgressIndicator(
+                value: downloadProgress.progress,
+                color: AppColors.primaryColor,
+              ),
             ),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
         Text(
           textAlign: TextAlign.center,

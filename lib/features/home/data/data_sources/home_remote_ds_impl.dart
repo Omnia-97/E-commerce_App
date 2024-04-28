@@ -4,6 +4,7 @@ import 'package:e_commerce_app/core/data/api/end_points.dart';
 import 'package:e_commerce_app/features/home/data/data_sources/home_remote_ds.dart';
 import 'package:e_commerce_app/features/home/data/models/brands_model.dart';
 import 'package:e_commerce_app/features/home/data/models/categories_model.dart';
+import 'package:e_commerce_app/features/home/data/models/categories_on_category_model.dart';
 import 'package:injectable/injectable.dart';
 @Injectable(as: HomeRemoteDS)
 class HomeRemoteDSImplement implements HomeRemoteDS {
@@ -25,5 +26,14 @@ class HomeRemoteDSImplement implements HomeRemoteDS {
     );
     CategoriesModel categoriesModel = CategoriesModel.fromJson(response.data);
     return categoriesModel;
+  }
+  @override
+  Future<CategoriesOnCategoryModel> getCategoriesOnCategory(String id) async {
+    var response = await apiManager.getData(
+      EndPoints.categoriesOnCategory(id),
+    );
+    CategoriesOnCategoryModel categoriesOnCategoryModel =
+    CategoriesOnCategoryModel.fromJson(response.data);
+    return categoriesOnCategoryModel;
   }
 }

@@ -6,4 +6,5 @@ class EndPoints{
   static const String subCategories = "/api/v1/subcategories";
   static const String allProducts = "/api/v1/products";
   static const String addToCart = "/api/v1/cart";
+  static String categoriesOnCategory(String categoryId) =>'/api/v1/categories/$categoryId/subcategories';
 }

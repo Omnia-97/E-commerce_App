@@ -24,7 +24,7 @@ class CategoryTabItem extends StatelessWidget {
           Visibility(
             visible: isSelected,
             child: Container(
-              height:75.h,
+              height: 75.h,
               width: 7.w,
               margin: EdgeInsets.only(left: 5.w, right: 5.w),
               decoration: BoxDecoration(
@@ -39,7 +39,8 @@ class CategoryTabItem extends StatelessWidget {
           SizedBox(
             width: isSelected ? 125.w : 138.w,
             child: Padding(
-              padding: isSelected?  EdgeInsets.all(0.w) : EdgeInsets.only(left: 6.w),
+              padding:
+                  isSelected ? EdgeInsets.all(0.w) : EdgeInsets.only(left: 6.w),
               child: Text(
                 categoryName,
                 overflow: TextOverflow.ellipsis,

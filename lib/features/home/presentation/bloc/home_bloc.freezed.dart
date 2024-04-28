@@ -22,6 +22,8 @@ mixin _$HomeEvent {
     required TResult Function() getCategories,
     required TResult Function() getBrands,
     required TResult Function(int index) changeBottomNavBar,
+    required TResult Function(String id) getSubCategories,
+    required TResult Function(int index) changeCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,8 @@ mixin _$HomeEvent {
     TResult? Function()? getCategories,
     TResult? Function()? getBrands,
     TResult? Function(int index)? changeBottomNavBar,
+    TResult? Function(String id)? getSubCategories,
+    TResult? Function(int index)? changeCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,8 @@ mixin _$HomeEvent {
     TResult Function()? getCategories,
     TResult Function()? getBrands,
     TResult Function(int index)? changeBottomNavBar,
+    TResult Function(String id)? getSubCategories,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +53,9 @@ mixin _$HomeEvent {
     required TResult Function(GetCategoriesEvent value) getCategories,
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(changeBottomNavBarEvent value) changeBottomNavBar,
+    required TResult Function(GetSubCategoriesEvent value) getSubCategories,
+    required TResult Function(ChangeCategoryIndexEvent value)
+        changeCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +64,8 @@ mixin _$HomeEvent {
     TResult? Function(GetCategoriesEvent value)? getCategories,
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult? Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +74,8 @@ mixin _$HomeEvent {
     TResult Function(GetCategoriesEvent value)? getCategories,
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +140,8 @@ class _$StartedImpl implements _Started {
     required TResult Function() getCategories,
     required TResult Function() getBrands,
     required TResult Function(int index) changeBottomNavBar,
+    required TResult Function(String id) getSubCategories,
+    required TResult Function(int index) changeCategoryIndex,
   }) {
     return started();
   }
@@ -138,6 +153,8 @@ class _$StartedImpl implements _Started {
     TResult? Function()? getCategories,
     TResult? Function()? getBrands,
     TResult? Function(int index)? changeBottomNavBar,
+    TResult? Function(String id)? getSubCategories,
+    TResult? Function(int index)? changeCategoryIndex,
   }) {
     return started?.call();
   }
@@ -149,6 +166,8 @@ class _$StartedImpl implements _Started {
     TResult Function()? getCategories,
     TResult Function()? getBrands,
     TResult Function(int index)? changeBottomNavBar,
+    TResult Function(String id)? getSubCategories,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -164,6 +183,9 @@ class _$StartedImpl implements _Started {
     required TResult Function(GetCategoriesEvent value) getCategories,
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(changeBottomNavBarEvent value) changeBottomNavBar,
+    required TResult Function(GetSubCategoriesEvent value) getSubCategories,
+    required TResult Function(ChangeCategoryIndexEvent value)
+        changeCategoryIndex,
   }) {
     return started(this);
   }
@@ -175,6 +197,8 @@ class _$StartedImpl implements _Started {
     TResult? Function(GetCategoriesEvent value)? getCategories,
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult? Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
   }) {
     return started?.call(this);
   }
@@ -186,6 +210,8 @@ class _$StartedImpl implements _Started {
     TResult Function(GetCategoriesEvent value)? getCategories,
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -241,6 +267,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     required TResult Function() getCategories,
     required TResult Function() getBrands,
     required TResult Function(int index) changeBottomNavBar,
+    required TResult Function(String id) getSubCategories,
+    required TResult Function(int index) changeCategoryIndex,
   }) {
     return getCategories();
   }
@@ -252,6 +280,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult? Function()? getCategories,
     TResult? Function()? getBrands,
     TResult? Function(int index)? changeBottomNavBar,
+    TResult? Function(String id)? getSubCategories,
+    TResult? Function(int index)? changeCategoryIndex,
   }) {
     return getCategories?.call();
   }
@@ -263,6 +293,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult Function()? getCategories,
     TResult Function()? getBrands,
     TResult Function(int index)? changeBottomNavBar,
+    TResult Function(String id)? getSubCategories,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getCategories != null) {
@@ -278,6 +310,9 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     required TResult Function(GetCategoriesEvent value) getCategories,
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(changeBottomNavBarEvent value) changeBottomNavBar,
+    required TResult Function(GetSubCategoriesEvent value) getSubCategories,
+    required TResult Function(ChangeCategoryIndexEvent value)
+        changeCategoryIndex,
   }) {
     return getCategories(this);
   }
@@ -289,6 +324,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult? Function(GetCategoriesEvent value)? getCategories,
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult? Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
   }) {
     return getCategories?.call(this);
   }
@@ -300,6 +337,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult Function(GetCategoriesEvent value)? getCategories,
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getCategories != null) {
@@ -355,6 +394,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     required TResult Function() getCategories,
     required TResult Function() getBrands,
     required TResult Function(int index) changeBottomNavBar,
+    required TResult Function(String id) getSubCategories,
+    required TResult Function(int index) changeCategoryIndex,
   }) {
     return getBrands();
   }
@@ -366,6 +407,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult? Function()? getCategories,
     TResult? Function()? getBrands,
     TResult? Function(int index)? changeBottomNavBar,
+    TResult? Function(String id)? getSubCategories,
+    TResult? Function(int index)? changeCategoryIndex,
   }) {
     return getBrands?.call();
   }
@@ -377,6 +420,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult Function()? getCategories,
     TResult Function()? getBrands,
     TResult Function(int index)? changeBottomNavBar,
+    TResult Function(String id)? getSubCategories,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getBrands != null) {
@@ -392,6 +437,9 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     required TResult Function(GetCategoriesEvent value) getCategories,
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(changeBottomNavBarEvent value) changeBottomNavBar,
+    required TResult Function(GetSubCategoriesEvent value) getSubCategories,
+    required TResult Function(ChangeCategoryIndexEvent value)
+        changeCategoryIndex,
   }) {
     return getBrands(this);
   }
@@ -403,6 +451,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult? Function(GetCategoriesEvent value)? getCategories,
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult? Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
   }) {
     return getBrands?.call(this);
   }
@@ -414,6 +464,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult Function(GetCategoriesEvent value)? getCategories,
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getBrands != null) {
@@ -498,6 +550,8 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     required TResult Function() getCategories,
     required TResult Function() getBrands,
     required TResult Function(int index) changeBottomNavBar,
+    required TResult Function(String id) getSubCategories,
+    required TResult Function(int index) changeCategoryIndex,
   }) {
     return changeBottomNavBar(index);
   }
@@ -509,6 +563,8 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     TResult? Function()? getCategories,
     TResult? Function()? getBrands,
     TResult? Function(int index)? changeBottomNavBar,
+    TResult? Function(String id)? getSubCategories,
+    TResult? Function(int index)? changeCategoryIndex,
   }) {
     return changeBottomNavBar?.call(index);
   }
@@ -520,6 +576,8 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     TResult Function()? getCategories,
     TResult Function()? getBrands,
     TResult Function(int index)? changeBottomNavBar,
+    TResult Function(String id)? getSubCategories,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (changeBottomNavBar != null) {
@@ -535,6 +593,9 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     required TResult Function(GetCategoriesEvent value) getCategories,
     required TResult Function(GetBrandsEvent value) getBrands,
     required TResult Function(changeBottomNavBarEvent value) changeBottomNavBar,
+    required TResult Function(GetSubCategoriesEvent value) getSubCategories,
+    required TResult Function(ChangeCategoryIndexEvent value)
+        changeCategoryIndex,
   }) {
     return changeBottomNavBar(this);
   }
@@ -546,6 +607,8 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     TResult? Function(GetCategoriesEvent value)? getCategories,
     TResult? Function(GetBrandsEvent value)? getBrands,
     TResult? Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult? Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
   }) {
     return changeBottomNavBar?.call(this);
   }
@@ -557,6 +620,8 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     TResult Function(GetCategoriesEvent value)? getCategories,
     TResult Function(GetBrandsEvent value)? getBrands,
     TResult Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (changeBottomNavBar != null) {
@@ -577,14 +642,343 @@ abstract class changeBottomNavBarEvent implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetSubCategoriesEventImplCopyWith<$Res> {
+  factory _$$GetSubCategoriesEventImplCopyWith(
+          _$GetSubCategoriesEventImpl value,
+          $Res Function(_$GetSubCategoriesEventImpl) then) =
+      __$$GetSubCategoriesEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$GetSubCategoriesEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetSubCategoriesEventImpl>
+    implements _$$GetSubCategoriesEventImplCopyWith<$Res> {
+  __$$GetSubCategoriesEventImplCopyWithImpl(_$GetSubCategoriesEventImpl _value,
+      $Res Function(_$GetSubCategoriesEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetSubCategoriesEventImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetSubCategoriesEventImpl implements GetSubCategoriesEvent {
+  const _$GetSubCategoriesEventImpl(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'HomeEvent.getSubCategories(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSubCategoriesEventImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSubCategoriesEventImplCopyWith<_$GetSubCategoriesEventImpl>
+      get copyWith => __$$GetSubCategoriesEventImplCopyWithImpl<
+          _$GetSubCategoriesEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getCategories,
+    required TResult Function() getBrands,
+    required TResult Function(int index) changeBottomNavBar,
+    required TResult Function(String id) getSubCategories,
+    required TResult Function(int index) changeCategoryIndex,
+  }) {
+    return getSubCategories(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getCategories,
+    TResult? Function()? getBrands,
+    TResult? Function(int index)? changeBottomNavBar,
+    TResult? Function(String id)? getSubCategories,
+    TResult? Function(int index)? changeCategoryIndex,
+  }) {
+    return getSubCategories?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getCategories,
+    TResult Function()? getBrands,
+    TResult Function(int index)? changeBottomNavBar,
+    TResult Function(String id)? getSubCategories,
+    TResult Function(int index)? changeCategoryIndex,
+    required TResult orElse(),
+  }) {
+    if (getSubCategories != null) {
+      return getSubCategories(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(GetBrandsEvent value) getBrands,
+    required TResult Function(changeBottomNavBarEvent value) changeBottomNavBar,
+    required TResult Function(GetSubCategoriesEvent value) getSubCategories,
+    required TResult Function(ChangeCategoryIndexEvent value)
+        changeCategoryIndex,
+  }) {
+    return getSubCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(GetBrandsEvent value)? getBrands,
+    TResult? Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult? Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
+  }) {
+    return getSubCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(GetBrandsEvent value)? getBrands,
+    TResult Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
+    required TResult orElse(),
+  }) {
+    if (getSubCategories != null) {
+      return getSubCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSubCategoriesEvent implements HomeEvent {
+  const factory GetSubCategoriesEvent(final String id) =
+      _$GetSubCategoriesEventImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$GetSubCategoriesEventImplCopyWith<_$GetSubCategoriesEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeCategoryIndexEventImplCopyWith<$Res> {
+  factory _$$ChangeCategoryIndexEventImplCopyWith(
+          _$ChangeCategoryIndexEventImpl value,
+          $Res Function(_$ChangeCategoryIndexEventImpl) then) =
+      __$$ChangeCategoryIndexEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$ChangeCategoryIndexEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$ChangeCategoryIndexEventImpl>
+    implements _$$ChangeCategoryIndexEventImplCopyWith<$Res> {
+  __$$ChangeCategoryIndexEventImplCopyWithImpl(
+      _$ChangeCategoryIndexEventImpl _value,
+      $Res Function(_$ChangeCategoryIndexEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$ChangeCategoryIndexEventImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeCategoryIndexEventImpl implements ChangeCategoryIndexEvent {
+  const _$ChangeCategoryIndexEventImpl(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'HomeEvent.changeCategoryIndex(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeCategoryIndexEventImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeCategoryIndexEventImplCopyWith<_$ChangeCategoryIndexEventImpl>
+      get copyWith => __$$ChangeCategoryIndexEventImplCopyWithImpl<
+          _$ChangeCategoryIndexEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getCategories,
+    required TResult Function() getBrands,
+    required TResult Function(int index) changeBottomNavBar,
+    required TResult Function(String id) getSubCategories,
+    required TResult Function(int index) changeCategoryIndex,
+  }) {
+    return changeCategoryIndex(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getCategories,
+    TResult? Function()? getBrands,
+    TResult? Function(int index)? changeBottomNavBar,
+    TResult? Function(String id)? getSubCategories,
+    TResult? Function(int index)? changeCategoryIndex,
+  }) {
+    return changeCategoryIndex?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getCategories,
+    TResult Function()? getBrands,
+    TResult Function(int index)? changeBottomNavBar,
+    TResult Function(String id)? getSubCategories,
+    TResult Function(int index)? changeCategoryIndex,
+    required TResult orElse(),
+  }) {
+    if (changeCategoryIndex != null) {
+      return changeCategoryIndex(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(GetBrandsEvent value) getBrands,
+    required TResult Function(changeBottomNavBarEvent value) changeBottomNavBar,
+    required TResult Function(GetSubCategoriesEvent value) getSubCategories,
+    required TResult Function(ChangeCategoryIndexEvent value)
+        changeCategoryIndex,
+  }) {
+    return changeCategoryIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(GetBrandsEvent value)? getBrands,
+    TResult? Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult? Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
+  }) {
+    return changeCategoryIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(GetBrandsEvent value)? getBrands,
+    TResult Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
+    required TResult orElse(),
+  }) {
+    if (changeCategoryIndex != null) {
+      return changeCategoryIndex(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeCategoryIndexEvent implements HomeEvent {
+  const factory ChangeCategoryIndexEvent(final int index) =
+      _$ChangeCategoryIndexEventImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$ChangeCategoryIndexEventImplCopyWith<_$ChangeCategoryIndexEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   RequestStatus get getCategoriesStatus => throw _privateConstructorUsedError;
   RequestStatus get getBrandsStatus => throw _privateConstructorUsedError;
+  RequestStatus? get getCategoriesTabStatus =>
+      throw _privateConstructorUsedError;
+  int get selectedCategoryIndex => throw _privateConstructorUsedError;
   int get currentIndex => throw _privateConstructorUsedError;
+  CategoriesOnCategoryModel? get subCategoriesModel =>
+      throw _privateConstructorUsedError;
   CategoriesModel? get categoriesModel => throw _privateConstructorUsedError;
   BrandsModel? get brandsModel => throw _privateConstructorUsedError;
   Failures? get categoriesFailure => throw _privateConstructorUsedError;
   Failures? get brandsFailure => throw _privateConstructorUsedError;
+  Failures? get subCategoriesFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -599,11 +993,15 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {RequestStatus getCategoriesStatus,
       RequestStatus getBrandsStatus,
+      RequestStatus? getCategoriesTabStatus,
+      int selectedCategoryIndex,
       int currentIndex,
+      CategoriesOnCategoryModel? subCategoriesModel,
       CategoriesModel? categoriesModel,
       BrandsModel? brandsModel,
       Failures? categoriesFailure,
-      Failures? brandsFailure});
+      Failures? brandsFailure,
+      Failures? subCategoriesFailure});
 }
 
 /// @nodoc
@@ -621,11 +1019,15 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? getCategoriesStatus = null,
     Object? getBrandsStatus = null,
+    Object? getCategoriesTabStatus = freezed,
+    Object? selectedCategoryIndex = null,
     Object? currentIndex = null,
+    Object? subCategoriesModel = freezed,
     Object? categoriesModel = freezed,
     Object? brandsModel = freezed,
     Object? categoriesFailure = freezed,
     Object? brandsFailure = freezed,
+    Object? subCategoriesFailure = freezed,
   }) {
     return _then(_value.copyWith(
       getCategoriesStatus: null == getCategoriesStatus
@@ -636,10 +1038,22 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.getBrandsStatus
           : getBrandsStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      getCategoriesTabStatus: freezed == getCategoriesTabStatus
+          ? _value.getCategoriesTabStatus
+          : getCategoriesTabStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus?,
+      selectedCategoryIndex: null == selectedCategoryIndex
+          ? _value.selectedCategoryIndex
+          : selectedCategoryIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       currentIndex: null == currentIndex
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      subCategoriesModel: freezed == subCategoriesModel
+          ? _value.subCategoriesModel
+          : subCategoriesModel // ignore: cast_nullable_to_non_nullable
+              as CategoriesOnCategoryModel?,
       categoriesModel: freezed == categoriesModel
           ? _value.categoriesModel
           : categoriesModel // ignore: cast_nullable_to_non_nullable
@@ -655,6 +1069,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       brandsFailure: freezed == brandsFailure
           ? _value.brandsFailure
           : brandsFailure // ignore: cast_nullable_to_non_nullable
+              as Failures?,
+      subCategoriesFailure: freezed == subCategoriesFailure
+          ? _value.subCategoriesFailure
+          : subCategoriesFailure // ignore: cast_nullable_to_non_nullable
               as Failures?,
     ) as $Val);
   }
@@ -671,11 +1089,15 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   $Res call(
       {RequestStatus getCategoriesStatus,
       RequestStatus getBrandsStatus,
+      RequestStatus? getCategoriesTabStatus,
+      int selectedCategoryIndex,
       int currentIndex,
+      CategoriesOnCategoryModel? subCategoriesModel,
       CategoriesModel? categoriesModel,
       BrandsModel? brandsModel,
       Failures? categoriesFailure,
-      Failures? brandsFailure});
+      Failures? brandsFailure,
+      Failures? subCategoriesFailure});
 }
 
 /// @nodoc
@@ -691,11 +1113,15 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? getCategoriesStatus = null,
     Object? getBrandsStatus = null,
+    Object? getCategoriesTabStatus = freezed,
+    Object? selectedCategoryIndex = null,
     Object? currentIndex = null,
+    Object? subCategoriesModel = freezed,
     Object? categoriesModel = freezed,
     Object? brandsModel = freezed,
     Object? categoriesFailure = freezed,
     Object? brandsFailure = freezed,
+    Object? subCategoriesFailure = freezed,
   }) {
     return _then(_$HomeStateImpl(
       getCategoriesStatus: null == getCategoriesStatus
@@ -706,10 +1132,22 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.getBrandsStatus
           : getBrandsStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      getCategoriesTabStatus: freezed == getCategoriesTabStatus
+          ? _value.getCategoriesTabStatus
+          : getCategoriesTabStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus?,
+      selectedCategoryIndex: null == selectedCategoryIndex
+          ? _value.selectedCategoryIndex
+          : selectedCategoryIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       currentIndex: null == currentIndex
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      subCategoriesModel: freezed == subCategoriesModel
+          ? _value.subCategoriesModel
+          : subCategoriesModel // ignore: cast_nullable_to_non_nullable
+              as CategoriesOnCategoryModel?,
       categoriesModel: freezed == categoriesModel
           ? _value.categoriesModel
           : categoriesModel // ignore: cast_nullable_to_non_nullable
@@ -726,6 +1164,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.brandsFailure
           : brandsFailure // ignore: cast_nullable_to_non_nullable
               as Failures?,
+      subCategoriesFailure: freezed == subCategoriesFailure
+          ? _value.subCategoriesFailure
+          : subCategoriesFailure // ignore: cast_nullable_to_non_nullable
+              as Failures?,
     ));
   }
 }
@@ -736,11 +1178,15 @@ class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
       {this.getCategoriesStatus = RequestStatus.init,
       this.getBrandsStatus = RequestStatus.init,
+      this.getCategoriesTabStatus = RequestStatus.init,
+      this.selectedCategoryIndex = 0,
       this.currentIndex = 0,
+      this.subCategoriesModel,
       this.categoriesModel,
       this.brandsModel,
       this.categoriesFailure,
-      this.brandsFailure});
+      this.brandsFailure,
+      this.subCategoriesFailure});
 
   @override
   @JsonKey()
@@ -750,7 +1196,15 @@ class _$HomeStateImpl implements _HomeState {
   final RequestStatus getBrandsStatus;
   @override
   @JsonKey()
+  final RequestStatus? getCategoriesTabStatus;
+  @override
+  @JsonKey()
+  final int selectedCategoryIndex;
+  @override
+  @JsonKey()
   final int currentIndex;
+  @override
+  final CategoriesOnCategoryModel? subCategoriesModel;
   @override
   final CategoriesModel? categoriesModel;
   @override
@@ -759,10 +1213,12 @@ class _$HomeStateImpl implements _HomeState {
   final Failures? categoriesFailure;
   @override
   final Failures? brandsFailure;
+  @override
+  final Failures? subCategoriesFailure;
 
   @override
   String toString() {
-    return 'HomeState(getCategoriesStatus: $getCategoriesStatus, getBrandsStatus: $getBrandsStatus, currentIndex: $currentIndex, categoriesModel: $categoriesModel, brandsModel: $brandsModel, categoriesFailure: $categoriesFailure, brandsFailure: $brandsFailure)';
+    return 'HomeState(getCategoriesStatus: $getCategoriesStatus, getBrandsStatus: $getBrandsStatus, getCategoriesTabStatus: $getCategoriesTabStatus, selectedCategoryIndex: $selectedCategoryIndex, currentIndex: $currentIndex, subCategoriesModel: $subCategoriesModel, categoriesModel: $categoriesModel, brandsModel: $brandsModel, categoriesFailure: $categoriesFailure, brandsFailure: $brandsFailure, subCategoriesFailure: $subCategoriesFailure)';
   }
 
   @override
@@ -774,8 +1230,14 @@ class _$HomeStateImpl implements _HomeState {
                 other.getCategoriesStatus == getCategoriesStatus) &&
             (identical(other.getBrandsStatus, getBrandsStatus) ||
                 other.getBrandsStatus == getBrandsStatus) &&
+            (identical(other.getCategoriesTabStatus, getCategoriesTabStatus) ||
+                other.getCategoriesTabStatus == getCategoriesTabStatus) &&
+            (identical(other.selectedCategoryIndex, selectedCategoryIndex) ||
+                other.selectedCategoryIndex == selectedCategoryIndex) &&
             (identical(other.currentIndex, currentIndex) ||
                 other.currentIndex == currentIndex) &&
+            (identical(other.subCategoriesModel, subCategoriesModel) ||
+                other.subCategoriesModel == subCategoriesModel) &&
             (identical(other.categoriesModel, categoriesModel) ||
                 other.categoriesModel == categoriesModel) &&
             (identical(other.brandsModel, brandsModel) ||
@@ -783,7 +1245,9 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.categoriesFailure, categoriesFailure) ||
                 other.categoriesFailure == categoriesFailure) &&
             (identical(other.brandsFailure, brandsFailure) ||
-                other.brandsFailure == brandsFailure));
+                other.brandsFailure == brandsFailure) &&
+            (identical(other.subCategoriesFailure, subCategoriesFailure) ||
+                other.subCategoriesFailure == subCategoriesFailure));
   }
 
   @override
@@ -791,11 +1255,15 @@ class _$HomeStateImpl implements _HomeState {
       runtimeType,
       getCategoriesStatus,
       getBrandsStatus,
+      getCategoriesTabStatus,
+      selectedCategoryIndex,
       currentIndex,
+      subCategoriesModel,
       categoriesModel,
       brandsModel,
       categoriesFailure,
-      brandsFailure);
+      brandsFailure,
+      subCategoriesFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -808,18 +1276,28 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {final RequestStatus getCategoriesStatus,
       final RequestStatus getBrandsStatus,
+      final RequestStatus? getCategoriesTabStatus,
+      final int selectedCategoryIndex,
       final int currentIndex,
+      final CategoriesOnCategoryModel? subCategoriesModel,
       final CategoriesModel? categoriesModel,
       final BrandsModel? brandsModel,
       final Failures? categoriesFailure,
-      final Failures? brandsFailure}) = _$HomeStateImpl;
+      final Failures? brandsFailure,
+      final Failures? subCategoriesFailure}) = _$HomeStateImpl;
 
   @override
   RequestStatus get getCategoriesStatus;
   @override
   RequestStatus get getBrandsStatus;
   @override
+  RequestStatus? get getCategoriesTabStatus;
+  @override
+  int get selectedCategoryIndex;
+  @override
   int get currentIndex;
+  @override
+  CategoriesOnCategoryModel? get subCategoriesModel;
   @override
   CategoriesModel? get categoriesModel;
   @override
@@ -828,6 +1306,8 @@ abstract class _HomeState implements HomeState {
   Failures? get categoriesFailure;
   @override
   Failures? get brandsFailure;
+  @override
+  Failures? get subCategoriesFailure;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

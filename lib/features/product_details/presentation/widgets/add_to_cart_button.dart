@@ -7,15 +7,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddToCartButton extends StatelessWidget {
-  const AddToCartButton({super.key});
-
+  const AddToCartButton({super.key, required this.onTap});
+ final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 268.w,
       height: 50.h,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          onTap();
+        },
         style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primaryColor,
             shape: RoundedRectangleBorder(

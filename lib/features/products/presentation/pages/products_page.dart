@@ -12,9 +12,10 @@ class ProductsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String id = ModalRoute.of(context)!.settings.arguments as String;
     return BlocProvider(
       create: (context) => getIt<ProductsBloc>()
-        ..add(const GetAllProductsEvent())
+        ..add(GetAllProductsEvent(id))
         ..add(const GetProductToCartEvent()),
       child: BlocConsumer<ProductsBloc, ProductsState>(
         listener: (context, state) {
@@ -61,9 +62,10 @@ class ProductsPage extends StatelessWidget {
                         return ProductItemWidget(
                           onTap: () {
                             BlocProvider.of<ProductsBloc>(context).add(
-                                AddProductToCartEvent(
-                                    state.allProductsModel?.data?[index].id ??
-                                        ""));
+                              AddProductToCartEvent(
+                                  state.allProductsModel?.data?[index].id ??
+                                      ""),
+                            );
                           },
                           index: index,
                           data: state.allProductsModel?.data,

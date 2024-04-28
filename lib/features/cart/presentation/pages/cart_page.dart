@@ -4,14 +4,11 @@ import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/core/utils/app_strings.dart';
 import 'package:e_commerce_app/features/cart/presentation/widgets/cart_item_widget.dart';
 import 'package:e_commerce_app/features/cart/presentation/widgets/check_out_button.dart';
-import 'package:e_commerce_app/features/product_details/presentation/widgets/add_to_cart_button.dart';
 import 'package:e_commerce_app/features/products/presentation/bloc/products_bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../core/utils/styles.dart';
 
 class CartPage extends StatelessWidget {
@@ -19,7 +16,6 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int quantity = 1;
     return BlocProvider(
       create: (context) => getIt<ProductsBloc>()
         ..add(
@@ -41,16 +37,9 @@ class CartPage extends StatelessWidget {
                   height: 28.h,
                 ),
                 SizedBox(
-                  width: 32.w,
+                  width: 20.w,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(right: 16.w),
-                  child: SvgPicture.asset(
-                    AppImages.shoppingIc,
-                    width: 28.w,
-                    height: 28.h,
-                  ),
-                ),
+
               ],
             ),
             body: Padding(
@@ -87,7 +76,7 @@ class CartPage extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'EGP ${state.getCartModel?.data?.totalCartPrice}',
+                            'EGP ${state.getCartModel?.data?.totalCartPrice ?? 0}',
                             style: Styles.titleMedian.copyWith(
                               color: AppColors.textColor,
                             ),

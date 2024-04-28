@@ -129,7 +129,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
 
 List<Widget> tabs = [
   const HomePage(),
-  const CategoriesPage(),
+   CategoriesPage(),
   const WishListPage(),
   const AccountPage()
 ];

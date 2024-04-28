@@ -24,7 +24,7 @@ class CheckOutButton extends StatelessWidget {
             )),
         child: Row(
           children: [
-            SizedBox(width:50.h),
+            SizedBox(width: 50.h),
             Text(
               AppStrings.checkOut,
               style: Styles.appBarTitle.copyWith(

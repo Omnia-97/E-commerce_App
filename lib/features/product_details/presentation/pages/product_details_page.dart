@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce_app/config.dart';
 import 'package:e_commerce_app/config/routes/pages_route_name.dart';
 import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/core/utils/app_images.dart';
@@ -8,20 +9,33 @@ import 'package:e_commerce_app/features/product_details/presentation/widgets/add
 import 'package:e_commerce_app/features/product_details/presentation/widgets/add_to_cart_button.dart';
 import 'package:e_commerce_app/features/product_details/presentation/widgets/image_carousel_widget.dart';
 import 'package:e_commerce_app/features/product_details/presentation/widgets/sold_widget.dart';
+import 'package:e_commerce_app/features/products/presentation/bloc/products_bloc.dart';
+import 'package:e_commerce_app/my_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../products/data/models/all_products_model.dart';
 
-class ProductDetailsPage extends StatelessWidget {
-  ProductDetailsPage({super.key});
-  int quantity = 1;
+class ProductDetailsPage extends StatefulWidget {
+  const ProductDetailsPage({super.key});
 
+  @override
+  State<ProductDetailsPage> createState() => _ProductDetailsPageState();
+}
+
+class _ProductDetailsPageState extends State<ProductDetailsPage> {
   @override
   Widget build(BuildContext context) {
     var product = ModalRoute.of(context)!.settings.arguments as Data;
+    var myProvider = Provider.of<MyProvider>(context);
+    return BlocProvider(
+  create: (context) =>getIt<ProductsBloc>()..add(const GetProductToCartEvent()),
+  child: BlocBuilder<ProductsBloc, ProductsState>(
+  builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -43,13 +57,17 @@ class ProductDetailsPage extends StatelessWidget {
             },
             child: Padding(
               padding: EdgeInsets.only(right: 16.w),
-              child: SvgPicture.asset(
-                AppImages.shoppingIc,
-                width: 28.w,
-                height: 28.h,
+              child: Badge(
+                label: Text(state.cartItemLength.toString()),
+                child: SvgPicture.asset(
+                  AppImages.shoppingIc,
+                  width: 28.w,
+                  height: 28.h,
+                ),
               ),
             ),
           ),
+
         ],
       ),
       body: Padding(
@@ -115,7 +133,15 @@ class ProductDetailsPage extends StatelessWidget {
                 const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(top: 8.h),
-                  child: const AddMoreWidget(),
+                  child: AddMoreWidget(
+                    quantity: myProvider.getQuantity(product.id ?? ""),
+                    onAdd: () {
+                      myProvider.addQuantity(product.id ?? "", context);
+                    },
+                    onSubtract: () {
+                      myProvider.subtractQuantity(product.id ?? "", context);
+                    },
+                  ),
                 ),
               ],
             ),
@@ -195,7 +221,7 @@ class ProductDetailsPage extends StatelessWidget {
                       height: 12.h,
                     ),
                     Text(
-                      'EGP ${product.price! * quantity}',
+                      'EGP ${product.price! * Provider.of<MyProvider>(context).getQuantity(product.id ?? "")}',
                       style: Styles.titleMedian.copyWith(
                         color: AppColors.textColor,
                       ),
@@ -205,12 +231,21 @@ class ProductDetailsPage extends StatelessWidget {
                 SizedBox(
                   width: 30.w,
                 ),
-                const AddToCartButton(),
+                AddToCartButton(
+                  onTap: () {
+                    BlocProvider.of<ProductsBloc>(context).add(
+                      AddProductToCartEvent(product.id ?? ""),
+                    );
+                  },
+                ),
               ],
             ),
           ],
         ),
       ),
     );
+  },
+),
+);
   }
 }

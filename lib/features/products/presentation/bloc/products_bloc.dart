@@ -20,7 +20,7 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
    ProductsBloc(this.allProductsUseCase, this.addProductToCartUseCase,this.getProductToCartUseCase,) : super(const ProductsState()) {
     on<GetAllProductsEvent>((event, emit) async {
       emit(state.copyWith(getAllProductsStatus: RequestStatus.loading));
-      var result = await allProductsUseCase();
+      var result = await allProductsUseCase(event.id);
       result.fold((l) {
         emit(state.copyWith(
             getAllProductsStatus: RequestStatus.failure,
