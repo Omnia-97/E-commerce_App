@@ -13,18 +13,16 @@ import 'package:readmore/readmore.dart';
 import '../../../../my_provider.dart';
 
 class CartItemWidget extends StatefulWidget {
-  CartItemWidget({super.key, required this.products, required this.index});
+  CartItemWidget({super.key, required this.products, required this.index,});
   List<Products> products;
   final int index;
+
 
   @override
   State<CartItemWidget> createState() => _CartItemWidgetState();
 }
 
 class _CartItemWidgetState extends State<CartItemWidget> {
-
-
-
   @override
   Widget build(BuildContext context) {
     var myProvider = Provider.of<MyProvider>(context, listen: false);
@@ -125,7 +123,7 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                 height: 16.h,
               ),
               Text(
-                " EGP ${widget.products[widget.index].price! * myProvider.getQuantity(widget.products[widget.index].product?.id ?? "")}",
+                " EGP ${widget.products[widget.index].price! /** myProvider.getQuantity(widget.products[widget.index].product?.id ?? "")*/}",
                 style: Styles.titleMedian.copyWith(color: AppColors.textColor),
               ),
             ],

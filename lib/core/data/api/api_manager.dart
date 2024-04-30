@@ -17,4 +17,9 @@ class ApiManager{
       headers: headers,
     ));
   }
+  Future<Response> deleteData(String endPoint, {Map<String, dynamic>? body, Map<String, dynamic>? headers}){
+    return dio.delete(Constants.baseUrl + endPoint, data: body, options: Options(
+      headers: headers,
+    ));
+  }
 }

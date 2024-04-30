@@ -19,7 +19,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
       listener: (context, state) {
-        if (state.getCategoriesStatus == RequestStatus.failure) {
+       /* if (state.getCategoriesStatus == RequestStatus.loading ||
+            state.getCategoriesTabStatus == RequestStatus.loading ||
+            state.getBrandsStatus == RequestStatus.loading) {
+          showDialog(
+            context: context,
+            builder: (context) => const Center(
+              child: CircularProgressIndicator(
+                color: AppColors.primaryColor,
+              ),
+            ),
+          );
+        } else if (state.getCategoriesStatus == RequestStatus.success ||
+            state.getCategoriesTabStatus == RequestStatus.success ||
+            state.getBrandsStatus == RequestStatus.success) {
+          Navigator.pop(context);
+        } else if (state.getCategoriesStatus == RequestStatus.failure ||
+            state.getCategoriesTabStatus == RequestStatus.failure ||
+            state.getBrandsStatus == RequestStatus.failure) {
           showDialog(
             context: context,
             builder: (context) => Center(
@@ -31,7 +48,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           );
-        }
+        }*/
       },
       builder: (context, state) {
         return SingleChildScrollView(
@@ -56,9 +73,12 @@ class HomePage extends StatelessWidget {
                     itemCount: state.categoriesModel?.data?.length ?? 0,
                     itemBuilder: (context, index) {
                       return CategoryItem(
-                        onTap: (){
-                          Navigator.pushNamed(context, PagesRouteName.products, arguments: state.categoriesModel?.data?[index].id);
-                        },
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, PagesRouteName.products,
+                                arguments:
+                                    state.categoriesModel?.data?[index].id);
+                          },
                           categoryImageUrl:
                               state.categoriesModel?.data?[index].image ?? "",
                           categoryText:
@@ -84,8 +104,7 @@ class HomePage extends StatelessWidget {
                     return BrandItemWidget(
                         brandImageUrl:
                             state.brandsModel?.data?[index].image ?? "",
-                        brandText:
-                            state.brandsModel?.data?[index].name ?? "");
+                        brandText: state.brandsModel?.data?[index].name ?? "");
                   },
                   itemCount: state.brandsModel?.data?.length ?? 0,
                   scrollDirection: Axis.horizontal,

@@ -22,7 +22,8 @@ class AllProductsRepoImpl implements AllProductsRepo {
   }
 
   @override
-  Future<Either<Failures, AddProductToCartModel>> addProductToCart(String productId) async{
+  Future<Either<Failures, AddProductToCartModel>> addProductToCart(
+      String productId) async {
     try {
       var result = await allProductsDS.addProductToCart(productId);
       return Right(result);
@@ -32,12 +33,17 @@ class AllProductsRepoImpl implements AllProductsRepo {
   }
 
   @override
-  Future<Either<Failures, GetCartModel>> getProductToCart() async{
+  Future<Either<Failures, GetCartModel>> getProductToCart() async {
     try {
       var result = await allProductsDS.getProductToCart();
       return Right(result);
     } catch (e) {
       return Left(RemoteFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<Either<String, Failures>> removeProductFromCart() {
+    return allProductsDS.removeProductFromCart();
   }
 }

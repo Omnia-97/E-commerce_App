@@ -29,7 +29,9 @@ import 'features/products/domain/repositories/all_products_repo.dart' as _i10;
 import 'features/products/domain/use_cases/add_to_cart_use_case.dart' as _i16;
 import 'features/products/domain/use_cases/all_products_use_case.dart' as _i17;
 import 'features/products/domain/use_cases/get_cart_use_case.dart' as _i18;
-import 'features/products/presentation/bloc/products_bloc.dart' as _i19;
+import 'features/products/domain/use_cases/remove_product_from_cart.dart'
+    as _i19;
+import 'features/products/presentation/bloc/products_bloc.dart' as _i20;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -67,10 +69,13 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i17.AllProductsUseCase(gh<_i10.AllProductsRepo>()));
     gh.factory<_i18.GetProductToCartUseCase>(
         () => _i18.GetProductToCartUseCase(gh<_i10.AllProductsRepo>()));
-    gh.factory<_i19.ProductsBloc>(() => _i19.ProductsBloc(
+    gh.factory<_i19.RemoveProductFromCartUseCase>(
+        () => _i19.RemoveProductFromCartUseCase(gh<_i10.AllProductsRepo>()));
+    gh.factory<_i20.ProductsBloc>(() => _i20.ProductsBloc(
           gh<_i17.AllProductsUseCase>(),
           gh<_i16.AddProductToCartUseCase>(),
           gh<_i18.GetProductToCartUseCase>(),
+          gh<_i19.RemoveProductFromCartUseCase>(),
         ));
     return this;
   }

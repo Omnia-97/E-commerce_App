@@ -236,6 +236,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     BlocProvider.of<ProductsBloc>(context).add(
                       AddProductToCartEvent(product.id ?? ""),
                     );
+                    BlocProvider.of<ProductsBloc>(context).add(GetProductToCartEvent());
                   },
                 ),
               ],

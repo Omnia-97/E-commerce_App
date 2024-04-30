@@ -22,6 +22,7 @@ mixin _$ProductsEvent {
     required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
+    required TResult Function() removeProductFromCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$ProductsEvent {
     TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
+    TResult? Function()? removeProductFromCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$ProductsEvent {
     TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
+    TResult Function()? removeProductFromCart,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,8 @@ mixin _$ProductsEvent {
     required TResult Function(GetAllProductsEvent value) getAllProducts,
     required TResult Function(AddProductToCartEvent value) addProductToCart,
     required TResult Function(GetProductToCartEvent value) getProductToCart,
+    required TResult Function(RemoveProductFromCartEvent value)
+        removeProductFromCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +60,7 @@ mixin _$ProductsEvent {
     TResult? Function(GetAllProductsEvent value)? getAllProducts,
     TResult? Function(AddProductToCartEvent value)? addProductToCart,
     TResult? Function(GetProductToCartEvent value)? getProductToCart,
+    TResult? Function(RemoveProductFromCartEvent value)? removeProductFromCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +69,7 @@ mixin _$ProductsEvent {
     TResult Function(GetAllProductsEvent value)? getAllProducts,
     TResult Function(AddProductToCartEvent value)? addProductToCart,
     TResult Function(GetProductToCartEvent value)? getProductToCart,
+    TResult Function(RemoveProductFromCartEvent value)? removeProductFromCart,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +135,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
+    required TResult Function() removeProductFromCart,
   }) {
     return started();
   }
@@ -139,6 +147,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
+    TResult? Function()? removeProductFromCart,
   }) {
     return started?.call();
   }
@@ -150,6 +159,7 @@ class _$StartedImpl implements _Started {
     TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
+    TResult Function()? removeProductFromCart,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -165,6 +175,8 @@ class _$StartedImpl implements _Started {
     required TResult Function(GetAllProductsEvent value) getAllProducts,
     required TResult Function(AddProductToCartEvent value) addProductToCart,
     required TResult Function(GetProductToCartEvent value) getProductToCart,
+    required TResult Function(RemoveProductFromCartEvent value)
+        removeProductFromCart,
   }) {
     return started(this);
   }
@@ -176,6 +188,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(GetAllProductsEvent value)? getAllProducts,
     TResult? Function(AddProductToCartEvent value)? addProductToCart,
     TResult? Function(GetProductToCartEvent value)? getProductToCart,
+    TResult? Function(RemoveProductFromCartEvent value)? removeProductFromCart,
   }) {
     return started?.call(this);
   }
@@ -187,6 +200,7 @@ class _$StartedImpl implements _Started {
     TResult Function(GetAllProductsEvent value)? getAllProducts,
     TResult Function(AddProductToCartEvent value)? addProductToCart,
     TResult Function(GetProductToCartEvent value)? getProductToCart,
+    TResult Function(RemoveProductFromCartEvent value)? removeProductFromCart,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -269,6 +283,7 @@ class _$GetAllProductsEventImpl implements GetAllProductsEvent {
     required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
+    required TResult Function() removeProductFromCart,
   }) {
     return getAllProducts(id);
   }
@@ -280,6 +295,7 @@ class _$GetAllProductsEventImpl implements GetAllProductsEvent {
     TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
+    TResult? Function()? removeProductFromCart,
   }) {
     return getAllProducts?.call(id);
   }
@@ -291,6 +307,7 @@ class _$GetAllProductsEventImpl implements GetAllProductsEvent {
     TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
+    TResult Function()? removeProductFromCart,
     required TResult orElse(),
   }) {
     if (getAllProducts != null) {
@@ -306,6 +323,8 @@ class _$GetAllProductsEventImpl implements GetAllProductsEvent {
     required TResult Function(GetAllProductsEvent value) getAllProducts,
     required TResult Function(AddProductToCartEvent value) addProductToCart,
     required TResult Function(GetProductToCartEvent value) getProductToCart,
+    required TResult Function(RemoveProductFromCartEvent value)
+        removeProductFromCart,
   }) {
     return getAllProducts(this);
   }
@@ -317,6 +336,7 @@ class _$GetAllProductsEventImpl implements GetAllProductsEvent {
     TResult? Function(GetAllProductsEvent value)? getAllProducts,
     TResult? Function(AddProductToCartEvent value)? addProductToCart,
     TResult? Function(GetProductToCartEvent value)? getProductToCart,
+    TResult? Function(RemoveProductFromCartEvent value)? removeProductFromCart,
   }) {
     return getAllProducts?.call(this);
   }
@@ -328,6 +348,7 @@ class _$GetAllProductsEventImpl implements GetAllProductsEvent {
     TResult Function(GetAllProductsEvent value)? getAllProducts,
     TResult Function(AddProductToCartEvent value)? addProductToCart,
     TResult Function(GetProductToCartEvent value)? getProductToCart,
+    TResult Function(RemoveProductFromCartEvent value)? removeProductFromCart,
     required TResult orElse(),
   }) {
     if (getAllProducts != null) {
@@ -418,6 +439,7 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
     required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
+    required TResult Function() removeProductFromCart,
   }) {
     return addProductToCart(productId);
   }
@@ -429,6 +451,7 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
     TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
+    TResult? Function()? removeProductFromCart,
   }) {
     return addProductToCart?.call(productId);
   }
@@ -440,6 +463,7 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
     TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
+    TResult Function()? removeProductFromCart,
     required TResult orElse(),
   }) {
     if (addProductToCart != null) {
@@ -455,6 +479,8 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
     required TResult Function(GetAllProductsEvent value) getAllProducts,
     required TResult Function(AddProductToCartEvent value) addProductToCart,
     required TResult Function(GetProductToCartEvent value) getProductToCart,
+    required TResult Function(RemoveProductFromCartEvent value)
+        removeProductFromCart,
   }) {
     return addProductToCart(this);
   }
@@ -466,6 +492,7 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
     TResult? Function(GetAllProductsEvent value)? getAllProducts,
     TResult? Function(AddProductToCartEvent value)? addProductToCart,
     TResult? Function(GetProductToCartEvent value)? getProductToCart,
+    TResult? Function(RemoveProductFromCartEvent value)? removeProductFromCart,
   }) {
     return addProductToCart?.call(this);
   }
@@ -477,6 +504,7 @@ class _$AddProductToCartEventImpl implements AddProductToCartEvent {
     TResult Function(GetAllProductsEvent value)? getAllProducts,
     TResult Function(AddProductToCartEvent value)? addProductToCart,
     TResult Function(GetProductToCartEvent value)? getProductToCart,
+    TResult Function(RemoveProductFromCartEvent value)? removeProductFromCart,
     required TResult orElse(),
   }) {
     if (addProductToCart != null) {
@@ -540,6 +568,7 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
     required TResult Function(String id) getAllProducts,
     required TResult Function(String productId) addProductToCart,
     required TResult Function() getProductToCart,
+    required TResult Function() removeProductFromCart,
   }) {
     return getProductToCart();
   }
@@ -551,6 +580,7 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
     TResult? Function(String id)? getAllProducts,
     TResult? Function(String productId)? addProductToCart,
     TResult? Function()? getProductToCart,
+    TResult? Function()? removeProductFromCart,
   }) {
     return getProductToCart?.call();
   }
@@ -562,6 +592,7 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
     TResult Function(String id)? getAllProducts,
     TResult Function(String productId)? addProductToCart,
     TResult Function()? getProductToCart,
+    TResult Function()? removeProductFromCart,
     required TResult orElse(),
   }) {
     if (getProductToCart != null) {
@@ -577,6 +608,8 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
     required TResult Function(GetAllProductsEvent value) getAllProducts,
     required TResult Function(AddProductToCartEvent value) addProductToCart,
     required TResult Function(GetProductToCartEvent value) getProductToCart,
+    required TResult Function(RemoveProductFromCartEvent value)
+        removeProductFromCart,
   }) {
     return getProductToCart(this);
   }
@@ -588,6 +621,7 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
     TResult? Function(GetAllProductsEvent value)? getAllProducts,
     TResult? Function(AddProductToCartEvent value)? addProductToCart,
     TResult? Function(GetProductToCartEvent value)? getProductToCart,
+    TResult? Function(RemoveProductFromCartEvent value)? removeProductFromCart,
   }) {
     return getProductToCart?.call(this);
   }
@@ -599,6 +633,7 @@ class _$GetProductToCartEventImpl implements GetProductToCartEvent {
     TResult Function(GetAllProductsEvent value)? getAllProducts,
     TResult Function(AddProductToCartEvent value)? addProductToCart,
     TResult Function(GetProductToCartEvent value)? getProductToCart,
+    TResult Function(RemoveProductFromCartEvent value)? removeProductFromCart,
     required TResult orElse(),
   }) {
     if (getProductToCart != null) {
@@ -613,6 +648,130 @@ abstract class GetProductToCartEvent implements ProductsEvent {
 }
 
 /// @nodoc
+abstract class _$$RemoveProductFromCartEventImplCopyWith<$Res> {
+  factory _$$RemoveProductFromCartEventImplCopyWith(
+          _$RemoveProductFromCartEventImpl value,
+          $Res Function(_$RemoveProductFromCartEventImpl) then) =
+      __$$RemoveProductFromCartEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RemoveProductFromCartEventImplCopyWithImpl<$Res>
+    extends _$ProductsEventCopyWithImpl<$Res, _$RemoveProductFromCartEventImpl>
+    implements _$$RemoveProductFromCartEventImplCopyWith<$Res> {
+  __$$RemoveProductFromCartEventImplCopyWithImpl(
+      _$RemoveProductFromCartEventImpl _value,
+      $Res Function(_$RemoveProductFromCartEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RemoveProductFromCartEventImpl implements RemoveProductFromCartEvent {
+  const _$RemoveProductFromCartEventImpl();
+
+  @override
+  String toString() {
+    return 'ProductsEvent.removeProductFromCart()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveProductFromCartEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String id) getAllProducts,
+    required TResult Function(String productId) addProductToCart,
+    required TResult Function() getProductToCart,
+    required TResult Function() removeProductFromCart,
+  }) {
+    return removeProductFromCart();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String id)? getAllProducts,
+    TResult? Function(String productId)? addProductToCart,
+    TResult? Function()? getProductToCart,
+    TResult? Function()? removeProductFromCart,
+  }) {
+    return removeProductFromCart?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String id)? getAllProducts,
+    TResult Function(String productId)? addProductToCart,
+    TResult Function()? getProductToCart,
+    TResult Function()? removeProductFromCart,
+    required TResult orElse(),
+  }) {
+    if (removeProductFromCart != null) {
+      return removeProductFromCart();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(GetAllProductsEvent value) getAllProducts,
+    required TResult Function(AddProductToCartEvent value) addProductToCart,
+    required TResult Function(GetProductToCartEvent value) getProductToCart,
+    required TResult Function(RemoveProductFromCartEvent value)
+        removeProductFromCart,
+  }) {
+    return removeProductFromCart(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(GetAllProductsEvent value)? getAllProducts,
+    TResult? Function(AddProductToCartEvent value)? addProductToCart,
+    TResult? Function(GetProductToCartEvent value)? getProductToCart,
+    TResult? Function(RemoveProductFromCartEvent value)? removeProductFromCart,
+  }) {
+    return removeProductFromCart?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(GetAllProductsEvent value)? getAllProducts,
+    TResult Function(AddProductToCartEvent value)? addProductToCart,
+    TResult Function(GetProductToCartEvent value)? getProductToCart,
+    TResult Function(RemoveProductFromCartEvent value)? removeProductFromCart,
+    required TResult orElse(),
+  }) {
+    if (removeProductFromCart != null) {
+      return removeProductFromCart(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveProductFromCartEvent implements ProductsEvent {
+  const factory RemoveProductFromCartEvent() = _$RemoveProductFromCartEventImpl;
+}
+
+/// @nodoc
 mixin _$ProductsState {
   RequestStatus get status => throw _privateConstructorUsedError;
   RequestStatus get getAllProductsStatus => throw _privateConstructorUsedError;
@@ -620,9 +779,14 @@ mixin _$ProductsState {
       throw _privateConstructorUsedError;
   RequestStatus get getProductToCartStatus =>
       throw _privateConstructorUsedError;
+  RequestStatus get removeProductFromCartStatus =>
+      throw _privateConstructorUsedError;
   int get cartItemLength => throw _privateConstructorUsedError;
   AllProductsModel? get allProductsModel => throw _privateConstructorUsedError;
   GetCartModel? get getCartModel => throw _privateConstructorUsedError;
+  String? get message => throw _privateConstructorUsedError;
+  Failures? get removeProductFromCartFailure =>
+      throw _privateConstructorUsedError;
   Failures? get allProductsFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -641,9 +805,12 @@ abstract class $ProductsStateCopyWith<$Res> {
       RequestStatus getAllProductsStatus,
       RequestStatus addProductToCartStatus,
       RequestStatus getProductToCartStatus,
+      RequestStatus removeProductFromCartStatus,
       int cartItemLength,
       AllProductsModel? allProductsModel,
       GetCartModel? getCartModel,
+      String? message,
+      Failures? removeProductFromCartFailure,
       Failures? allProductsFailure});
 }
 
@@ -664,9 +831,12 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
     Object? getAllProductsStatus = null,
     Object? addProductToCartStatus = null,
     Object? getProductToCartStatus = null,
+    Object? removeProductFromCartStatus = null,
     Object? cartItemLength = null,
     Object? allProductsModel = freezed,
     Object? getCartModel = freezed,
+    Object? message = freezed,
+    Object? removeProductFromCartFailure = freezed,
     Object? allProductsFailure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -686,6 +856,10 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
           ? _value.getProductToCartStatus
           : getProductToCartStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      removeProductFromCartStatus: null == removeProductFromCartStatus
+          ? _value.removeProductFromCartStatus
+          : removeProductFromCartStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
       cartItemLength: null == cartItemLength
           ? _value.cartItemLength
           : cartItemLength // ignore: cast_nullable_to_non_nullable
@@ -698,6 +872,14 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
           ? _value.getCartModel
           : getCartModel // ignore: cast_nullable_to_non_nullable
               as GetCartModel?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      removeProductFromCartFailure: freezed == removeProductFromCartFailure
+          ? _value.removeProductFromCartFailure
+          : removeProductFromCartFailure // ignore: cast_nullable_to_non_nullable
+              as Failures?,
       allProductsFailure: freezed == allProductsFailure
           ? _value.allProductsFailure
           : allProductsFailure // ignore: cast_nullable_to_non_nullable
@@ -719,9 +901,12 @@ abstract class _$$ProductsStateImplCopyWith<$Res>
       RequestStatus getAllProductsStatus,
       RequestStatus addProductToCartStatus,
       RequestStatus getProductToCartStatus,
+      RequestStatus removeProductFromCartStatus,
       int cartItemLength,
       AllProductsModel? allProductsModel,
       GetCartModel? getCartModel,
+      String? message,
+      Failures? removeProductFromCartFailure,
       Failures? allProductsFailure});
 }
 
@@ -740,9 +925,12 @@ class __$$ProductsStateImplCopyWithImpl<$Res>
     Object? getAllProductsStatus = null,
     Object? addProductToCartStatus = null,
     Object? getProductToCartStatus = null,
+    Object? removeProductFromCartStatus = null,
     Object? cartItemLength = null,
     Object? allProductsModel = freezed,
     Object? getCartModel = freezed,
+    Object? message = freezed,
+    Object? removeProductFromCartFailure = freezed,
     Object? allProductsFailure = freezed,
   }) {
     return _then(_$ProductsStateImpl(
@@ -762,6 +950,10 @@ class __$$ProductsStateImplCopyWithImpl<$Res>
           ? _value.getProductToCartStatus
           : getProductToCartStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      removeProductFromCartStatus: null == removeProductFromCartStatus
+          ? _value.removeProductFromCartStatus
+          : removeProductFromCartStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus,
       cartItemLength: null == cartItemLength
           ? _value.cartItemLength
           : cartItemLength // ignore: cast_nullable_to_non_nullable
@@ -774,6 +966,14 @@ class __$$ProductsStateImplCopyWithImpl<$Res>
           ? _value.getCartModel
           : getCartModel // ignore: cast_nullable_to_non_nullable
               as GetCartModel?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      removeProductFromCartFailure: freezed == removeProductFromCartFailure
+          ? _value.removeProductFromCartFailure
+          : removeProductFromCartFailure // ignore: cast_nullable_to_non_nullable
+              as Failures?,
       allProductsFailure: freezed == allProductsFailure
           ? _value.allProductsFailure
           : allProductsFailure // ignore: cast_nullable_to_non_nullable
@@ -790,9 +990,12 @@ class _$ProductsStateImpl implements _ProductsState {
       this.getAllProductsStatus = RequestStatus.init,
       this.addProductToCartStatus = RequestStatus.init,
       this.getProductToCartStatus = RequestStatus.init,
+      this.removeProductFromCartStatus = RequestStatus.init,
       this.cartItemLength = 0,
       this.allProductsModel,
       this.getCartModel,
+      this.message,
+      this.removeProductFromCartFailure,
       this.allProductsFailure});
 
   @override
@@ -809,17 +1012,24 @@ class _$ProductsStateImpl implements _ProductsState {
   final RequestStatus getProductToCartStatus;
   @override
   @JsonKey()
+  final RequestStatus removeProductFromCartStatus;
+  @override
+  @JsonKey()
   final int cartItemLength;
   @override
   final AllProductsModel? allProductsModel;
   @override
   final GetCartModel? getCartModel;
   @override
+  final String? message;
+  @override
+  final Failures? removeProductFromCartFailure;
+  @override
   final Failures? allProductsFailure;
 
   @override
   String toString() {
-    return 'ProductsState(status: $status, getAllProductsStatus: $getAllProductsStatus, addProductToCartStatus: $addProductToCartStatus, getProductToCartStatus: $getProductToCartStatus, cartItemLength: $cartItemLength, allProductsModel: $allProductsModel, getCartModel: $getCartModel, allProductsFailure: $allProductsFailure)';
+    return 'ProductsState(status: $status, getAllProductsStatus: $getAllProductsStatus, addProductToCartStatus: $addProductToCartStatus, getProductToCartStatus: $getProductToCartStatus, removeProductFromCartStatus: $removeProductFromCartStatus, cartItemLength: $cartItemLength, allProductsModel: $allProductsModel, getCartModel: $getCartModel, message: $message, removeProductFromCartFailure: $removeProductFromCartFailure, allProductsFailure: $allProductsFailure)';
   }
 
   @override
@@ -834,12 +1044,21 @@ class _$ProductsStateImpl implements _ProductsState {
                 other.addProductToCartStatus == addProductToCartStatus) &&
             (identical(other.getProductToCartStatus, getProductToCartStatus) ||
                 other.getProductToCartStatus == getProductToCartStatus) &&
+            (identical(other.removeProductFromCartStatus,
+                    removeProductFromCartStatus) ||
+                other.removeProductFromCartStatus ==
+                    removeProductFromCartStatus) &&
             (identical(other.cartItemLength, cartItemLength) ||
                 other.cartItemLength == cartItemLength) &&
             (identical(other.allProductsModel, allProductsModel) ||
                 other.allProductsModel == allProductsModel) &&
             (identical(other.getCartModel, getCartModel) ||
                 other.getCartModel == getCartModel) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.removeProductFromCartFailure,
+                    removeProductFromCartFailure) ||
+                other.removeProductFromCartFailure ==
+                    removeProductFromCartFailure) &&
             (identical(other.allProductsFailure, allProductsFailure) ||
                 other.allProductsFailure == allProductsFailure));
   }
@@ -851,9 +1070,12 @@ class _$ProductsStateImpl implements _ProductsState {
       getAllProductsStatus,
       addProductToCartStatus,
       getProductToCartStatus,
+      removeProductFromCartStatus,
       cartItemLength,
       allProductsModel,
       getCartModel,
+      message,
+      removeProductFromCartFailure,
       allProductsFailure);
 
   @JsonKey(ignore: true)
@@ -869,9 +1091,12 @@ abstract class _ProductsState implements ProductsState {
       final RequestStatus getAllProductsStatus,
       final RequestStatus addProductToCartStatus,
       final RequestStatus getProductToCartStatus,
+      final RequestStatus removeProductFromCartStatus,
       final int cartItemLength,
       final AllProductsModel? allProductsModel,
       final GetCartModel? getCartModel,
+      final String? message,
+      final Failures? removeProductFromCartFailure,
       final Failures? allProductsFailure}) = _$ProductsStateImpl;
 
   @override
@@ -883,11 +1108,17 @@ abstract class _ProductsState implements ProductsState {
   @override
   RequestStatus get getProductToCartStatus;
   @override
+  RequestStatus get removeProductFromCartStatus;
+  @override
   int get cartItemLength;
   @override
   AllProductsModel? get allProductsModel;
   @override
   GetCartModel? get getCartModel;
+  @override
+  String? get message;
+  @override
+  Failures? get removeProductFromCartFailure;
   @override
   Failures? get allProductsFailure;
   @override
