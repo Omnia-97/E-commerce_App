@@ -4,23 +4,30 @@ import 'package:e_commerce_app/core/enums/enums.dart';
 import 'package:e_commerce_app/features/home/data/models/brands_model.dart';
 import 'package:e_commerce_app/features/home/data/models/categories_model.dart';
 import 'package:e_commerce_app/features/home/data/models/categories_on_category_model.dart';
+import 'package:e_commerce_app/features/home/data/models/wish_list_model.dart';
+import 'package:e_commerce_app/features/home/domain/use_cases/add_to_wish_list_use_case.dart';
 import 'package:e_commerce_app/features/home/domain/use_cases/categories_tab_use_case.dart';
 import 'package:e_commerce_app/features/home/domain/use_cases/get_categories_use_case.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-
 import '../../domain/use_cases/get_brands_use_case.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
 part 'home_bloc.freezed.dart';
+
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   GetCategoriesUseCase getCategoriesUseCase;
   GetBrandsUseCase getBrandsUseCase;
   CategoriesTabUseCase categoriesTabUseCase;
-  HomeBloc({required this.getCategoriesUseCase, required this.getBrandsUseCase, required this.categoriesTabUseCase})
-      : super(const HomeState()) {
+  AddProductToWishListUseCase addProductToWishListUseCase;
+  HomeBloc({
+    required this.getCategoriesUseCase,
+    required this.getBrandsUseCase,
+    required this.categoriesTabUseCase,
+    required this.addProductToWishListUseCase,
+  }) : super(const HomeState()) {
     on<GetCategoriesEvent>((event, emit) async {
       emit(state.copyWith(getCategoriesStatus: RequestStatus.loading));
       var result = await getCategoriesUseCase();
@@ -43,7 +50,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             getBrandsStatus: RequestStatus.success, brandsModel: r));
       });
     });
-    on<changeBottomNavBarEvent>((event, emit){
+    on<changeBottomNavBarEvent>((event, emit) {
       emit(state.copyWith(currentIndex: event.index));
     });
     on<GetSubCategoriesEvent>((event, emit) async {
@@ -60,9 +67,24 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       });
     });
     on<ChangeCategoryIndexEvent>(
-          (event, emit) {
+      (event, emit) {
         emit(state.copyWith(selectedCategoryIndex: event.index));
       },
     );
+    on<AddProductToWishListEvent>((event, emit) async {
+      emit(state.copyWith(addProductToWishlistStatus: RequestStatus.loading));
+      var result = await addProductToWishListUseCase(event.productId);
+      result.fold((l) {
+        emit(state.copyWith(
+          addProductToWishlistStatus: RequestStatus.failure,
+          addProductToWishlistFailure: l,
+        ));
+      }, (r) {
+        emit(state.copyWith(
+          addProductToWishlistStatus: RequestStatus.success,
+          wishListModel: r,
+        ));
+      });
+    });
   }
 }

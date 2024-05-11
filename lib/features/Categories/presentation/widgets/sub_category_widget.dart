@@ -77,7 +77,9 @@ class SubCategoryWidget extends StatelessWidget {
                 color: AppColors.primaryColor,
               ),
             ),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+            errorWidget: (context, url, error) => const CircularProgressIndicator(
+              color: AppColors.primaryColor,
+            ),
           ),
         ),
         SizedBox(

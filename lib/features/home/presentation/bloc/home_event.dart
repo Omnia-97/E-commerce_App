@@ -8,4 +8,5 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.changeBottomNavBar(int index) = changeBottomNavBarEvent;
   const factory HomeEvent.getSubCategories(String id) = GetSubCategoriesEvent;
   const factory HomeEvent.changeCategoryIndex(int index) = ChangeCategoryIndexEvent;
+  const factory HomeEvent.addProductToWishList(String productId) = AddProductToWishListEvent;
 }

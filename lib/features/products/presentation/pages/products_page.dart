@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/config.dart';
 import 'package:e_commerce_app/core/components/reusable_components/custom_app_bar.dart';
 import 'package:e_commerce_app/core/enums/enums.dart';
+import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/features/products/presentation/widgets/product_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,6 +23,32 @@ class ProductsPage extends StatelessWidget {
           if (state.addProductToCartStatus == RequestStatus.success) {
             BlocProvider.of<ProductsBloc>(context)
                 .add(const GetProductToCartEvent());
+          }
+          if (state.getAllProductsStatus == RequestStatus.loading) {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.primaryColor,
+
+                  ),
+                );
+              },
+            );
+
+          }
+          if (state.getAllProductsStatus == RequestStatus.failure) {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.primaryColor,
+                  ),
+                );
+              },
+            );
           }
         },
         builder: (context, state) {

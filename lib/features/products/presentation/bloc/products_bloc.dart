@@ -20,9 +20,12 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   GetProductToCartUseCase getProductToCartUseCase;
   AddProductToCartUseCase addProductToCartUseCase;
   RemoveProductFromCartUseCase removeProductFromCartUseCase;
-  ProductsBloc(this.allProductsUseCase, this.addProductToCartUseCase,
-      this.getProductToCartUseCase, this.removeProductFromCartUseCase)
-      : super(const ProductsState()) {
+  ProductsBloc(
+    this.allProductsUseCase,
+    this.addProductToCartUseCase,
+    this.getProductToCartUseCase,
+    this.removeProductFromCartUseCase,
+  ) : super(const ProductsState()) {
     on<GetAllProductsEvent>((event, emit) async {
       emit(state.copyWith(getAllProductsStatus: RequestStatus.loading));
       var result = await allProductsUseCase(event.id);
