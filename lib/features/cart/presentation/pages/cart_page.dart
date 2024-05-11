@@ -39,7 +39,7 @@ String id = "";
                 SizedBox(width: 10.w,),
                 InkWell(
                   onTap: (){
-                    BlocProvider.of<ProductsBloc>(context).add(RemoveProductFromCartEvent());
+                    BlocProvider.of<ProductsBloc>(context).add(const RemoveProductFromCartEvent());
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

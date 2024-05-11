@@ -15,10 +15,12 @@ class ProductItemWidget extends StatelessWidget {
     this.data,
     required this.index,
     required this.onTap,
+    required this.wishListOnTap,
   });
   final int index;
   final List<Data>? data;
   final VoidCallback onTap;
+  final VoidCallback wishListOnTap;
 
   @override
   Widget build(BuildContext context) {
@@ -70,10 +72,15 @@ class ProductItemWidget extends StatelessWidget {
                         const Icon(Icons.error),
                   ),
                 ),
-                const BottomActiveIcon(
-                  imageIcon: AppImages.wishListIc,
-                  iconSize: 24,
-                  iconColor: AppColors.primaryColor,
+                InkWell(
+                  onTap: () {
+                    wishListOnTap();
+                  },
+                  child: const BottomActiveIcon(
+                    imageIcon: AppImages.wishListIc,
+                    iconSize: 24,
+                    iconColor: AppColors.primaryColor,
+                  ),
                 ),
               ],
             ),
