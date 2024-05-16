@@ -1,28 +1,34 @@
-/*
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce_app/config.dart';
 import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/core/utils/app_images.dart';
+import 'package:e_commerce_app/core/utils/app_strings.dart';
 import 'package:e_commerce_app/core/utils/styles.dart';
-import 'package:e_commerce_app/features/products/data/models/get_cart_model.dart';
+import 'package:e_commerce_app/features/products/presentation/bloc/products_bloc.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../home/data/models/get_wish_list_model.dart';
 
 class WishListItem extends StatelessWidget {
-  WishListItem({super.key, required this.products, required this.index,});
-  List<Products> products;
-  final int index;
+  WishListItem({
+    super.key,
+    required this.data,
+    required this.index,
+  });
 
+  List<Data> data;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-
-
     return Container(
       width: 389.w,
-      height: 126.h,
+      height: 113.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.r),
         border: Border.all(
@@ -33,10 +39,10 @@ class WishListItem extends StatelessWidget {
       child: Row(
         children: [
           CachedNetworkImage(
-            imageUrl: products[index].product?.imageCover ?? "",
+            imageUrl: data[index].imageCover ?? "",
             imageBuilder: (context, imageProvider) => Container(
               width: 120.w,
-              height: 126.h,
+              height: 113.h,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   image: DecorationImage(
@@ -50,11 +56,11 @@ class WishListItem extends StatelessWidget {
             ),
             progressIndicatorBuilder: (context, url, downloadProgress) =>
                 Center(
-                  child: CircularProgressIndicator(
-                    value: downloadProgress.progress,
-                    color: AppColors.primaryColor,
-                  ),
-                ),
+              child: CircularProgressIndicator(
+                value: downloadProgress.progress,
+                color: AppColors.primaryColor,
+              ),
+            ),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
           SizedBox(
@@ -64,20 +70,20 @@ class WishListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 16.h,
+                height: 10.h,
               ),
               Expanded(
                 child: SizedBox(
                   width: 134.w,
-                  height: 25.h,
+                  height: 18.h,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: ReadMoreText(
-                      products[index].product?.title ?? "",
+                      data[index].title ?? "",
                       style: Styles.titleMedian
                           .copyWith(color: AppColors.textColor),
                       trimMode: TrimMode.Line,
-                      trimLines: 2,
+                      trimLines: 1,
                       colorClickableText: AppColors.primaryColor,
                       trimExpandedText: ' Read less',
                       trimCollapsedText: 'Read more',
@@ -90,11 +96,10 @@ class WishListItem extends StatelessWidget {
                 height: 13.h,
               ),
               CachedNetworkImage(
-                imageUrl:
-                products[index].product?.brand?.image ?? "",
+                imageUrl: data[index].brand?.image ?? "",
                 imageBuilder: (context, imageProvider) => Container(
                   width: 50.w,
-                  height: 20.h,
+                  height: 18.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
                     image: DecorationImage(
@@ -105,21 +110,20 @@ class WishListItem extends StatelessWidget {
                 ),
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     Center(
-                      child: CircularProgressIndicator(
-                        value: downloadProgress.progress,
-                        color: AppColors.primaryColor,
-                      ),
-                    ),
+                  child: CircularProgressIndicator(
+                    value: downloadProgress.progress,
+                    color: AppColors.primaryColor,
+                  ),
+                ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
               SizedBox(
-                height: 16.h,
+                height: 18.h,
               ),
-             */
-/* Row(
+              Row(
                 children: [
                   Text(
-                    "EGP ${products[index].price?.toString() ?? " "}",
+                    "EGP ${data[index].price?.toString() ?? " "}",
                     style: Styles.categoryText,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -127,42 +131,92 @@ class WishListItem extends StatelessWidget {
                   SizedBox(
                     width: 16.w,
                   ),
-                  if (products[index].priceAfterDiscount != null &&
-                      product?.priceAfterDiscount != 0 &&
-                      product?.priceAfterDiscount != product?.price) ...[
-                    Text(
-                      "${product?.priceAfterDiscount?.toString() ?? " "} EGP",
-                      style: Styles.viewText.copyWith(
-                        decoration: TextDecoration.lineThrough,
-                        decorationColor:
-                        AppColors.primaryColor.withOpacity(0.6),
-                        decorationThickness: 1,
-                        color: AppColors.primaryColor.withOpacity(0.6),
-                      ),
+                  Text(
+                    "${data[index].sold.toString()} ${AppStrings.sold} ",
+                    style: Styles.viewText.copyWith(
+                      decorationColor: AppColors.primaryColor.withOpacity(0.6),
+                      decorationThickness: 1,
+                      color: AppColors.primaryColor.withOpacity(0.6),
                     ),
-                  ]
+                  ),
                 ],
-              ),*//*
-
+              ),
             ],
           ),
+          const Spacer(),
           Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 100.w, right: 4.w, top: 8.h),
-                child: SvgPicture.asset(
-                  AppImages.icAddedToWish,
+                padding: EdgeInsets.only(top: 8.h, left: 40.w),
+                child: Container(
+                  width: 30.w,
+                  height: 30.h,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.15),
+                        offset: const Offset(0, 5),
+                        blurRadius: 10,
+                      ),
+                    ],
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(5.r),
+                    child: SvgPicture.asset(
+                      AppImages.icAddedToWish,
+                    ),
+                  ),
                 ),
               ),
               SizedBox(
-                height: 39.h,
+                height: 31.h,
               ),
-
+              BlocProvider(
+                create: (context) => getIt<ProductsBloc>(),
+                child: BlocBuilder<ProductsBloc, ProductsState>(
+                  builder: (context, state) {
+                    return Padding(
+                      padding: EdgeInsets.only(right: 10.w),
+                      child: customAddToCartButton(() {
+                        BlocProvider.of<ProductsBloc>(context).add(
+                          AddProductToCartEvent(
+                            data[index].id ?? "",
+                          ),
+                        );
+                        BlocProvider.of<ProductsBloc>(context).add(
+                          const GetProductToCartEvent(),
+                        );
+                      }),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ],
       ),
     );
   }
+
+  Widget customAddToCartButton(VoidCallback onTap) {
+    return InkWell(
+      onTap: () {
+        onTap();
+      },
+      child: Container(
+          width: 100.w,
+          height: 36.h,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: AppColors.primaryColor,
+            borderRadius: BorderRadius.circular(15.r),
+          ),
+          child: Text(
+            AppStrings.addToCart,
+            style: Styles.titleMedian.copyWith(fontSize: 14.sp),
+          )),
+    );
+  }
 }
-*/

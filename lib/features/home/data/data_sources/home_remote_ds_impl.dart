@@ -6,6 +6,7 @@ import 'package:e_commerce_app/features/home/data/data_sources/home_remote_ds.da
 import 'package:e_commerce_app/features/home/data/models/brands_model.dart';
 import 'package:e_commerce_app/features/home/data/models/categories_model.dart';
 import 'package:e_commerce_app/features/home/data/models/categories_on_category_model.dart';
+import 'package:e_commerce_app/features/home/data/models/get_wish_list_model.dart';
 import 'package:e_commerce_app/features/home/data/models/wish_list_model.dart';
 import 'package:injectable/injectable.dart';
 
@@ -52,5 +53,15 @@ class HomeRemoteDSImplement implements HomeRemoteDS {
     });
     WishListModel wishListModel = WishListModel.fromJson(response.data);
     return wishListModel;
+  }
+
+  @override
+  Future<GetWishListModel> getProductToWishList() async{
+    var token = CacheHelper.getToken("token");
+    var response = await apiManager.getData(EndPoints.addProductToWishList, headers: {
+      "token": token,
+    });
+    GetWishListModel getWishListModel = GetWishListModel.fromJson(response.data);
+    return getWishListModel;
   }
 }

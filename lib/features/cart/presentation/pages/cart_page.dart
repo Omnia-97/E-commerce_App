@@ -12,15 +12,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/utils/styles.dart';
 
 class CartPage extends StatelessWidget {
-   CartPage({super.key});
-String id = "";
+  CartPage({super.key});
+  String id = "";
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<ProductsBloc>()
         ..add(
           const GetProductToCartEvent(),
-        )..add(AddProductToCartEvent(id)),
+        )
+        ..add(AddProductToCartEvent(id)),
       child: BlocConsumer<ProductsBloc, ProductsState>(
         listener: (context, state) {},
         builder: (context, state) {
@@ -36,10 +37,13 @@ String id = "";
                   width: 28.w,
                   height: 28.h,
                 ),
-                SizedBox(width: 10.w,),
+                SizedBox(
+                  width: 10.w,
+                ),
                 InkWell(
-                  onTap: (){
-                    BlocProvider.of<ProductsBloc>(context).add(const RemoveProductFromCartEvent());
+                  onTap: () {
+                    BlocProvider.of<ProductsBloc>(context)
+                        .add(const RemoveProductFromCartEvent());
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -48,7 +52,6 @@ String id = "";
                     ),
                   ),
                 ),
-
               ],
             ),
             body: Padding(

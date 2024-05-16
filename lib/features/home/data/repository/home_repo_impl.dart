@@ -4,6 +4,7 @@ import 'package:e_commerce_app/features/home/data/data_sources/home_remote_ds.da
 import 'package:e_commerce_app/features/home/data/models/brands_model.dart';
 import 'package:e_commerce_app/features/home/data/models/categories_model.dart';
 import 'package:e_commerce_app/features/home/data/models/categories_on_category_model.dart';
+import 'package:e_commerce_app/features/home/data/models/get_wish_list_model.dart';
 import 'package:e_commerce_app/features/home/data/models/wish_list_model.dart';
 import 'package:e_commerce_app/features/home/domain/repository/home_repo.dart';
 import 'package:injectable/injectable.dart';
@@ -52,5 +53,15 @@ class HomeRepoImplement implements HomeRepo {
     } catch (e) {
       return Left(RemoteFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<Either<Failures, GetWishListModel>> getProductToWishList() async{
+   try{
+     var result = await homeRemoteDS.getProductToWishList();
+     return Right(result);
+   }catch(e){
+     return Left(RemoteFailure(e.toString()));
+   }
   }
 }

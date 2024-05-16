@@ -20,5 +20,5 @@ class AppImages{
   static const String icAddToCart = 'assets/icons/ic_add_to_cart.svg';
   static const String icDelete = 'assets/icons/ic_delete.svg';
   static const String icCheckArrow = 'assets/icons/ic_check_arrow.svg';
-  static const String icAddedToWish = 'assets/icons/ic_added_wish.svg';
+  static const String icAddedToWish = 'assets/icons/Vector.svg';
 }

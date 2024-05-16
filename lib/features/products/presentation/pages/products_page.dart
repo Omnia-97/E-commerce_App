@@ -14,14 +14,11 @@ class ProductsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String id = ModalRoute
-        .of(context)!
-        .settings
-        .arguments as String;
+    String id = ModalRoute.of(context)!.settings.arguments as String;
     return BlocProvider(
-      create: (context) =>
-      getIt<ProductsBloc>()
-        ..add(GetAllProductsEvent(id))..add(const GetProductToCartEvent()),
+      create: (context) => getIt<ProductsBloc>()
+        ..add(GetAllProductsEvent(id))
+        ..add(const GetProductToCartEvent()),
       child: BlocConsumer<ProductsBloc, ProductsState>(
         listener: (context, state) {
           if (state.addProductToCartStatus == RequestStatus.success) {
@@ -75,48 +72,66 @@ class ProductsPage extends StatelessWidget {
               ),
             ),
             body: BlocProvider(
-              create: (context) =>getIt<HomeBloc>(),
+              create: (context) => getIt<HomeBloc>(),
               child: BlocBuilder<HomeBloc, HomeState>(
-  builder: (context, state) {
-    return Padding(
-                padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 24.h),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: GridView.builder(
-                        itemCount:  BlocProvider.of<ProductsBloc>(context).state.allProductsModel?.data?.length ?? 0,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: (192 / 282),
-                          mainAxisSpacing: 16.h,
-                          crossAxisSpacing: 16.w,
-                        ),
-                        itemBuilder: (context, index) {
-                          return ProductItemWidget(
-                            onTap: () {
-                              BlocProvider.of<ProductsBloc>(context).add(
-                                AddProductToCartEvent(
-                                    BlocProvider.of<ProductsBloc>(context).state.allProductsModel?.data?[index].id ??
-                                        ""),
+                builder: (context, state) {
+                  return Padding(
+                    padding:
+                        EdgeInsets.only(left: 16.w, right: 16.w, top: 24.h),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                            itemCount: BlocProvider.of<ProductsBloc>(context)
+                                    .state
+                                    .allProductsModel
+                                    ?.data
+                                    ?.length ??
+                                0,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: (192 / 282),
+                              mainAxisSpacing: 16.h,
+                              crossAxisSpacing: 16.w,
+                            ),
+                            itemBuilder: (context, index) {
+                              return ProductItemWidget(
+                                onTap: () {
+                                  BlocProvider.of<ProductsBloc>(context).add(
+                                    AddProductToCartEvent(
+                                        BlocProvider.of<ProductsBloc>(context)
+                                                .state
+                                                .allProductsModel
+                                                ?.data?[index]
+                                                .id ??
+                                            ""),
+                                  );
+                                },
+                                wishListOnTap: () {
+                                  BlocProvider.of<HomeBloc>(context).add(
+                                      AddProductToWishListEvent(
+                                          BlocProvider.of<ProductsBloc>(context)
+                                                  .state
+                                                  .allProductsModel
+                                                  ?.data?[index]
+                                                  .id ??
+                                              ""));
+                                },
+                                index: index,
+                                data: BlocProvider.of<ProductsBloc>(context)
+                                    .state
+                                    .allProductsModel
+                                    ?.data,
                               );
                             },
-                            wishListOnTap: () {
-                              BlocProvider.of<HomeBloc>(context).add(
-                                  AddProductToWishListEvent(
-                                      BlocProvider.of<ProductsBloc>(context).state.allProductsModel?.data?[index].id ??
-                                          ""));
-                            },
-                            index: index,
-                            data:  BlocProvider.of<ProductsBloc>(context).state.allProductsModel?.data,
-                          );
-                        },
-                      ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              );
-  },
-),
+                  );
+                },
+              ),
             ),
           );
         },
