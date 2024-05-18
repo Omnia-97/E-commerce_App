@@ -14,6 +14,7 @@ import 'package:injectable/injectable.dart';
 class HomeRemoteDSImplement implements HomeRemoteDS {
   ApiManager apiManager = ApiManager();
   HomeRemoteDSImplement(this.apiManager);
+  var token = CacheHelper.getToken("token");
   @override
   Future<BrandsModel> getBrands() async {
     Response<dynamic> response = await apiManager.getData(
@@ -44,7 +45,6 @@ class HomeRemoteDSImplement implements HomeRemoteDS {
 
   @override
   Future<WishListModel> getAddProductToWishList(String productId) async {
-    var token = CacheHelper.getToken("token");
     var response =
         await apiManager.postData(EndPoints.addProductToWishList, body: {
       "productId": productId,
@@ -56,12 +56,24 @@ class HomeRemoteDSImplement implements HomeRemoteDS {
   }
 
   @override
-  Future<GetWishListModel> getProductToWishList() async{
-    var token = CacheHelper.getToken("token");
-    var response = await apiManager.getData(EndPoints.addProductToWishList, headers: {
+  Future<GetWishListModel> getProductToWishList() async {
+    var response =
+        await apiManager.getData(EndPoints.addProductToWishList, headers: {
       "token": token,
     });
-    GetWishListModel getWishListModel = GetWishListModel.fromJson(response.data);
+    GetWishListModel getWishListModel =
+        GetWishListModel.fromJson(response.data);
     return getWishListModel;
+  }
+
+  @override
+  Future<GetWishListModel> removeProductFromWishList(
+      String productId) async {
+    var response = await apiManager
+        .deleteData(EndPoints.removeProductFromWishList(productId), headers: {
+      "token": token,
+    });
+   GetWishListModel getWishListModel = GetWishListModel.fromJson(response.data);
+   return getWishListModel;
   }
 }

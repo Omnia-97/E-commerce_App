@@ -10,4 +10,5 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.changeCategoryIndex(int index) = ChangeCategoryIndexEvent;
   const factory HomeEvent.addProductToWishList(String productId) = AddProductToWishListEvent;
   const factory HomeEvent.getProductToWishList() = GetProductToWishListEvent;
+  const factory HomeEvent.removeProductFromWishList(String productId) = RemoveProductFromWishListEvent;
 }

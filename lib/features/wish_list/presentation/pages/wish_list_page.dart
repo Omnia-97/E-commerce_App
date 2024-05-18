@@ -7,7 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WishListPage extends StatelessWidget {
   const WishListPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -22,7 +21,15 @@ class WishListPage extends StatelessWidget {
             child: ListView.separated(
               itemBuilder: (context, index) {
                 return WishListItem(
-                    data: state.getWishListModel?.data ?? [], index: index);
+                    onTap: () {
+                      BlocProvider.of<HomeBloc>(context).add(
+                          RemoveProductFromWishListEvent(
+                              state.getWishListModel?.data?[index].id ?? ""));
+                      BlocProvider.of<HomeBloc>(context)
+                          .add(const GetProductToWishListEvent());
+                    },
+                    data: state.getWishListModel?.data ?? [],
+                    index: index);
               },
               itemCount: state.getWishListModel?.data?.length ?? 0,
               separatorBuilder: (BuildContext context, int index) {

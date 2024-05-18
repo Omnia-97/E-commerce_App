@@ -10,6 +10,7 @@ import 'package:e_commerce_app/features/home/domain/use_cases/add_to_wish_list_u
 import 'package:e_commerce_app/features/home/domain/use_cases/categories_tab_use_case.dart';
 import 'package:e_commerce_app/features/home/domain/use_cases/get_categories_use_case.dart';
 import 'package:e_commerce_app/features/home/domain/use_cases/get_product_to_wish_list_use_case.dart';
+import 'package:e_commerce_app/features/home/domain/use_cases/remove_product_from_wish_use_case.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import '../../domain/use_cases/get_brands_use_case.dart';
@@ -25,12 +26,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   CategoriesTabUseCase categoriesTabUseCase;
   AddProductToWishListUseCase addProductToWishListUseCase;
   GetProductToWishListUseCase getProductToWishListUseCase;
+  RemoveProductFromWishUseCase removeProductFromWishUseCase;
   HomeBloc({
     required this.getCategoriesUseCase,
     required this.getBrandsUseCase,
     required this.categoriesTabUseCase,
     required this.addProductToWishListUseCase,
     required this.getProductToWishListUseCase,
+    required this.removeProductFromWishUseCase,
   }) : super(const HomeState()) {
     on<GetCategoriesEvent>((event, emit) async {
       emit(state.copyWith(getCategoriesStatus: RequestStatus.loading));
@@ -94,18 +97,34 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(state.copyWith(
           getProductToWishlistStatus: RequestStatus.loading,
           addProductToWishlistStatus: RequestStatus.init));
-     var result = await getProductToWishListUseCase();
-     result.fold((l){
-       emit(state.copyWith(
-         getProductToWishlistStatus: RequestStatus.failure,getProductToWishlistFailure: l,
-       ));
-     }, (r) {
-       emit(state.copyWith(
-         getProductToWishlistStatus: RequestStatus.success,
-         wishListLength: r.count ?? 0,
-         getWishListModel: r,
-       ));
-     });
+      var result = await getProductToWishListUseCase();
+      result.fold((l) {
+        emit(state.copyWith(
+          getProductToWishlistStatus: RequestStatus.failure,
+          getProductToWishlistFailure: l,
+        ));
+      }, (r) {
+        emit(state.copyWith(
+          getProductToWishlistStatus: RequestStatus.success,
+          wishListLength: r.count ?? 0,
+          getWishListModel: r,
+        ));
+      });
+    });
+    on<RemoveProductFromWishListEvent>((event, emit) async {
+      emit(state.copyWith(
+          removeProductFromWishlistStatus: RequestStatus.loading,
+          addProductToWishlistStatus: RequestStatus.init));
+      var result = await removeProductFromWishUseCase(event.productId);
+      result.fold((l) {
+        emit(state.copyWith(
+            removeProductFromWishlistStatus: RequestStatus.failure,
+            removeProductFromWishlistFailure: l));
+      }, (r) {
+        emit(state.copyWith(
+            removeProductFromWishlistStatus: RequestStatus.success,
+            getWishListModel: r));
+      });
     });
   }
 }

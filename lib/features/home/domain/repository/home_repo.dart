@@ -12,4 +12,5 @@ abstract class HomeRepo {
   Future<Either<Failures, CategoriesOnCategoryModel>> getCategoriesOnCategory(String id);
   Future<Either<Failures, WishListModel>> addProductToWishList(String productId);
   Future<Either<Failures, GetWishListModel>> getProductToWishList();
+  Future<Either<Failures, GetWishListModel>> removeProductFromWishList(String productId);
 }

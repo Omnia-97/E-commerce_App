@@ -5,13 +5,11 @@ import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/core/utils/app_strings.dart';
 import 'package:e_commerce_app/core/utils/styles.dart';
 import 'package:e_commerce_app/features/products/presentation/bloc/products_bloc.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:readmore/readmore.dart';
-
 import '../../../home/data/models/get_wish_list_model.dart';
 
 class WishListItem extends StatelessWidget {
@@ -19,10 +17,12 @@ class WishListItem extends StatelessWidget {
     super.key,
     required this.data,
     required this.index,
+    required this.onTap,
   });
 
   List<Data> data;
   final int index;
+  VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -146,26 +146,31 @@ class WishListItem extends StatelessWidget {
           const Spacer(),
           Column(
             children: [
-              Padding(
-                padding: EdgeInsets.only(top: 8.h, left: 40.w),
-                child: Container(
-                  width: 30.w,
-                  height: 30.h,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.15),
-                        offset: const Offset(0, 5),
-                        blurRadius: 10,
+              InkWell(
+                onTap: (){
+                  onTap();
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(top: 8.h, left: 40.w),
+                  child: Container(
+                    width: 30.w,
+                    height: 30.h,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.15),
+                          offset: const Offset(0, 5),
+                          blurRadius: 10,
+                        ),
+                      ],
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(5.r),
+                      child: SvgPicture.asset(
+                        AppImages.icAddedToWish,
                       ),
-                    ],
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(5.r),
-                    child: SvgPicture.asset(
-                      AppImages.icAddedToWish,
                     ),
                   ),
                 ),

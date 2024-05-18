@@ -8,5 +8,6 @@ class EndPoints{
   static const String addToCart = "/api/v1/cart";
   static const String addProductToWishList = "/api/v1/wishlist";
   static String categoriesOnCategory(String categoryId) =>'/api/v1/categories/$categoryId/subcategories';
+  static String removeProductFromWishList(String productId) =>'/api/v1/wishlist/$productId';
 
 }

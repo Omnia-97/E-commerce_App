@@ -8,6 +8,7 @@ class HomeState with _$HomeState {
     @Default(RequestStatus.init) RequestStatus? getCategoriesTabStatus,
     @Default(RequestStatus.init) RequestStatus? addProductToWishlistStatus,
     @Default(RequestStatus.init) RequestStatus? getProductToWishlistStatus,
+    @Default(RequestStatus.init) RequestStatus? removeProductFromWishlistStatus,
     @Default(0) int selectedCategoryIndex,
     @Default(0) int currentIndex,
     @Default(0) int wishListLength,
@@ -21,5 +22,6 @@ class HomeState with _$HomeState {
     Failures? subCategoriesFailure,
     Failures? addProductToWishlistFailure,
     Failures? getProductToWishlistFailure,
+    Failures? removeProductFromWishlistFailure,
   }) = _HomeState;
 }

@@ -26,6 +26,7 @@ mixin _$HomeEvent {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +39,7 @@ mixin _$HomeEvent {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +52,7 @@ mixin _$HomeEvent {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,6 +69,8 @@ mixin _$HomeEvent {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,6 +83,8 @@ mixin _$HomeEvent {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +97,8 @@ mixin _$HomeEvent {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,6 +167,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) {
     return started();
   }
@@ -173,6 +183,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) {
     return started?.call();
   }
@@ -188,6 +199,7 @@ class _$StartedImpl implements _Started {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -210,6 +222,8 @@ class _$StartedImpl implements _Started {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) {
     return started(this);
   }
@@ -225,6 +239,8 @@ class _$StartedImpl implements _Started {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) {
     return started?.call(this);
   }
@@ -240,6 +256,8 @@ class _$StartedImpl implements _Started {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -299,6 +317,7 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) {
     return getCategories();
   }
@@ -314,6 +333,7 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) {
     return getCategories?.call();
   }
@@ -329,6 +349,7 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (getCategories != null) {
@@ -351,6 +372,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) {
     return getCategories(this);
   }
@@ -366,6 +389,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) {
     return getCategories?.call(this);
   }
@@ -381,6 +406,8 @@ class _$GetCategoriesEventImpl implements GetCategoriesEvent {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (getCategories != null) {
@@ -440,6 +467,7 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) {
     return getBrands();
   }
@@ -455,6 +483,7 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) {
     return getBrands?.call();
   }
@@ -470,6 +499,7 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (getBrands != null) {
@@ -492,6 +522,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) {
     return getBrands(this);
   }
@@ -507,6 +539,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) {
     return getBrands?.call(this);
   }
@@ -522,6 +556,8 @@ class _$GetBrandsEventImpl implements GetBrandsEvent {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (getBrands != null) {
@@ -610,6 +646,7 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) {
     return changeBottomNavBar(index);
   }
@@ -625,6 +662,7 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) {
     return changeBottomNavBar?.call(index);
   }
@@ -640,6 +678,7 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (changeBottomNavBar != null) {
@@ -662,6 +701,8 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) {
     return changeBottomNavBar(this);
   }
@@ -677,6 +718,8 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) {
     return changeBottomNavBar?.call(this);
   }
@@ -692,6 +735,8 @@ class _$changeBottomNavBarEventImpl implements changeBottomNavBarEvent {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (changeBottomNavBar != null) {
@@ -785,6 +830,7 @@ class _$GetSubCategoriesEventImpl implements GetSubCategoriesEvent {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) {
     return getSubCategories(id);
   }
@@ -800,6 +846,7 @@ class _$GetSubCategoriesEventImpl implements GetSubCategoriesEvent {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) {
     return getSubCategories?.call(id);
   }
@@ -815,6 +862,7 @@ class _$GetSubCategoriesEventImpl implements GetSubCategoriesEvent {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (getSubCategories != null) {
@@ -837,6 +885,8 @@ class _$GetSubCategoriesEventImpl implements GetSubCategoriesEvent {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) {
     return getSubCategories(this);
   }
@@ -852,6 +902,8 @@ class _$GetSubCategoriesEventImpl implements GetSubCategoriesEvent {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) {
     return getSubCategories?.call(this);
   }
@@ -867,6 +919,8 @@ class _$GetSubCategoriesEventImpl implements GetSubCategoriesEvent {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (getSubCategories != null) {
@@ -961,6 +1015,7 @@ class _$ChangeCategoryIndexEventImpl implements ChangeCategoryIndexEvent {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) {
     return changeCategoryIndex(index);
   }
@@ -976,6 +1031,7 @@ class _$ChangeCategoryIndexEventImpl implements ChangeCategoryIndexEvent {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) {
     return changeCategoryIndex?.call(index);
   }
@@ -991,6 +1047,7 @@ class _$ChangeCategoryIndexEventImpl implements ChangeCategoryIndexEvent {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (changeCategoryIndex != null) {
@@ -1013,6 +1070,8 @@ class _$ChangeCategoryIndexEventImpl implements ChangeCategoryIndexEvent {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) {
     return changeCategoryIndex(this);
   }
@@ -1028,6 +1087,8 @@ class _$ChangeCategoryIndexEventImpl implements ChangeCategoryIndexEvent {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) {
     return changeCategoryIndex?.call(this);
   }
@@ -1043,6 +1104,8 @@ class _$ChangeCategoryIndexEventImpl implements ChangeCategoryIndexEvent {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (changeCategoryIndex != null) {
@@ -1138,6 +1201,7 @@ class _$AddProductToWishListEventImpl implements AddProductToWishListEvent {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) {
     return addProductToWishList(productId);
   }
@@ -1153,6 +1217,7 @@ class _$AddProductToWishListEventImpl implements AddProductToWishListEvent {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) {
     return addProductToWishList?.call(productId);
   }
@@ -1168,6 +1233,7 @@ class _$AddProductToWishListEventImpl implements AddProductToWishListEvent {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (addProductToWishList != null) {
@@ -1190,6 +1256,8 @@ class _$AddProductToWishListEventImpl implements AddProductToWishListEvent {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) {
     return addProductToWishList(this);
   }
@@ -1205,6 +1273,8 @@ class _$AddProductToWishListEventImpl implements AddProductToWishListEvent {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) {
     return addProductToWishList?.call(this);
   }
@@ -1220,6 +1290,8 @@ class _$AddProductToWishListEventImpl implements AddProductToWishListEvent {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (addProductToWishList != null) {
@@ -1288,6 +1360,7 @@ class _$GetProductToWishListEventImpl implements GetProductToWishListEvent {
     required TResult Function(int index) changeCategoryIndex,
     required TResult Function(String productId) addProductToWishList,
     required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
   }) {
     return getProductToWishList();
   }
@@ -1303,6 +1376,7 @@ class _$GetProductToWishListEventImpl implements GetProductToWishListEvent {
     TResult? Function(int index)? changeCategoryIndex,
     TResult? Function(String productId)? addProductToWishList,
     TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
   }) {
     return getProductToWishList?.call();
   }
@@ -1318,6 +1392,7 @@ class _$GetProductToWishListEventImpl implements GetProductToWishListEvent {
     TResult Function(int index)? changeCategoryIndex,
     TResult Function(String productId)? addProductToWishList,
     TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (getProductToWishList != null) {
@@ -1340,6 +1415,8 @@ class _$GetProductToWishListEventImpl implements GetProductToWishListEvent {
         addProductToWishList,
     required TResult Function(GetProductToWishListEvent value)
         getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
   }) {
     return getProductToWishList(this);
   }
@@ -1355,6 +1432,8 @@ class _$GetProductToWishListEventImpl implements GetProductToWishListEvent {
     TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
   }) {
     return getProductToWishList?.call(this);
   }
@@ -1370,6 +1449,8 @@ class _$GetProductToWishListEventImpl implements GetProductToWishListEvent {
     TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
     TResult Function(AddProductToWishListEvent value)? addProductToWishList,
     TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
     required TResult orElse(),
   }) {
     if (getProductToWishList != null) {
@@ -1384,6 +1465,195 @@ abstract class GetProductToWishListEvent implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$RemoveProductFromWishListEventImplCopyWith<$Res> {
+  factory _$$RemoveProductFromWishListEventImplCopyWith(
+          _$RemoveProductFromWishListEventImpl value,
+          $Res Function(_$RemoveProductFromWishListEventImpl) then) =
+      __$$RemoveProductFromWishListEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String productId});
+}
+
+/// @nodoc
+class __$$RemoveProductFromWishListEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$RemoveProductFromWishListEventImpl>
+    implements _$$RemoveProductFromWishListEventImplCopyWith<$Res> {
+  __$$RemoveProductFromWishListEventImplCopyWithImpl(
+      _$RemoveProductFromWishListEventImpl _value,
+      $Res Function(_$RemoveProductFromWishListEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productId = null,
+  }) {
+    return _then(_$RemoveProductFromWishListEventImpl(
+      null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveProductFromWishListEventImpl
+    implements RemoveProductFromWishListEvent {
+  const _$RemoveProductFromWishListEventImpl(this.productId);
+
+  @override
+  final String productId;
+
+  @override
+  String toString() {
+    return 'HomeEvent.removeProductFromWishList(productId: $productId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveProductFromWishListEventImpl &&
+            (identical(other.productId, productId) ||
+                other.productId == productId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, productId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveProductFromWishListEventImplCopyWith<
+          _$RemoveProductFromWishListEventImpl>
+      get copyWith => __$$RemoveProductFromWishListEventImplCopyWithImpl<
+          _$RemoveProductFromWishListEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getCategories,
+    required TResult Function() getBrands,
+    required TResult Function(int index) changeBottomNavBar,
+    required TResult Function(String id) getSubCategories,
+    required TResult Function(int index) changeCategoryIndex,
+    required TResult Function(String productId) addProductToWishList,
+    required TResult Function() getProductToWishList,
+    required TResult Function(String productId) removeProductFromWishList,
+  }) {
+    return removeProductFromWishList(productId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getCategories,
+    TResult? Function()? getBrands,
+    TResult? Function(int index)? changeBottomNavBar,
+    TResult? Function(String id)? getSubCategories,
+    TResult? Function(int index)? changeCategoryIndex,
+    TResult? Function(String productId)? addProductToWishList,
+    TResult? Function()? getProductToWishList,
+    TResult? Function(String productId)? removeProductFromWishList,
+  }) {
+    return removeProductFromWishList?.call(productId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getCategories,
+    TResult Function()? getBrands,
+    TResult Function(int index)? changeBottomNavBar,
+    TResult Function(String id)? getSubCategories,
+    TResult Function(int index)? changeCategoryIndex,
+    TResult Function(String productId)? addProductToWishList,
+    TResult Function()? getProductToWishList,
+    TResult Function(String productId)? removeProductFromWishList,
+    required TResult orElse(),
+  }) {
+    if (removeProductFromWishList != null) {
+      return removeProductFromWishList(productId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(GetCategoriesEvent value) getCategories,
+    required TResult Function(GetBrandsEvent value) getBrands,
+    required TResult Function(changeBottomNavBarEvent value) changeBottomNavBar,
+    required TResult Function(GetSubCategoriesEvent value) getSubCategories,
+    required TResult Function(ChangeCategoryIndexEvent value)
+        changeCategoryIndex,
+    required TResult Function(AddProductToWishListEvent value)
+        addProductToWishList,
+    required TResult Function(GetProductToWishListEvent value)
+        getProductToWishList,
+    required TResult Function(RemoveProductFromWishListEvent value)
+        removeProductFromWishList,
+  }) {
+    return removeProductFromWishList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(GetCategoriesEvent value)? getCategories,
+    TResult? Function(GetBrandsEvent value)? getBrands,
+    TResult? Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult? Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult? Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
+    TResult? Function(AddProductToWishListEvent value)? addProductToWishList,
+    TResult? Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult? Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
+  }) {
+    return removeProductFromWishList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(GetCategoriesEvent value)? getCategories,
+    TResult Function(GetBrandsEvent value)? getBrands,
+    TResult Function(changeBottomNavBarEvent value)? changeBottomNavBar,
+    TResult Function(GetSubCategoriesEvent value)? getSubCategories,
+    TResult Function(ChangeCategoryIndexEvent value)? changeCategoryIndex,
+    TResult Function(AddProductToWishListEvent value)? addProductToWishList,
+    TResult Function(GetProductToWishListEvent value)? getProductToWishList,
+    TResult Function(RemoveProductFromWishListEvent value)?
+        removeProductFromWishList,
+    required TResult orElse(),
+  }) {
+    if (removeProductFromWishList != null) {
+      return removeProductFromWishList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveProductFromWishListEvent implements HomeEvent {
+  const factory RemoveProductFromWishListEvent(final String productId) =
+      _$RemoveProductFromWishListEventImpl;
+
+  String get productId;
+  @JsonKey(ignore: true)
+  _$$RemoveProductFromWishListEventImplCopyWith<
+          _$RemoveProductFromWishListEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   RequestStatus get getCategoriesStatus => throw _privateConstructorUsedError;
   RequestStatus get getBrandsStatus => throw _privateConstructorUsedError;
@@ -1392,6 +1662,8 @@ mixin _$HomeState {
   RequestStatus? get addProductToWishlistStatus =>
       throw _privateConstructorUsedError;
   RequestStatus? get getProductToWishlistStatus =>
+      throw _privateConstructorUsedError;
+  RequestStatus? get removeProductFromWishlistStatus =>
       throw _privateConstructorUsedError;
   int get selectedCategoryIndex => throw _privateConstructorUsedError;
   int get currentIndex => throw _privateConstructorUsedError;
@@ -1408,6 +1680,8 @@ mixin _$HomeState {
   Failures? get addProductToWishlistFailure =>
       throw _privateConstructorUsedError;
   Failures? get getProductToWishlistFailure =>
+      throw _privateConstructorUsedError;
+  Failures? get removeProductFromWishlistFailure =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1426,6 +1700,7 @@ abstract class $HomeStateCopyWith<$Res> {
       RequestStatus? getCategoriesTabStatus,
       RequestStatus? addProductToWishlistStatus,
       RequestStatus? getProductToWishlistStatus,
+      RequestStatus? removeProductFromWishlistStatus,
       int selectedCategoryIndex,
       int currentIndex,
       int wishListLength,
@@ -1438,7 +1713,8 @@ abstract class $HomeStateCopyWith<$Res> {
       Failures? brandsFailure,
       Failures? subCategoriesFailure,
       Failures? addProductToWishlistFailure,
-      Failures? getProductToWishlistFailure});
+      Failures? getProductToWishlistFailure,
+      Failures? removeProductFromWishlistFailure});
 }
 
 /// @nodoc
@@ -1459,6 +1735,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? getCategoriesTabStatus = freezed,
     Object? addProductToWishlistStatus = freezed,
     Object? getProductToWishlistStatus = freezed,
+    Object? removeProductFromWishlistStatus = freezed,
     Object? selectedCategoryIndex = null,
     Object? currentIndex = null,
     Object? wishListLength = null,
@@ -1472,6 +1749,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? subCategoriesFailure = freezed,
     Object? addProductToWishlistFailure = freezed,
     Object? getProductToWishlistFailure = freezed,
+    Object? removeProductFromWishlistFailure = freezed,
   }) {
     return _then(_value.copyWith(
       getCategoriesStatus: null == getCategoriesStatus
@@ -1494,6 +1772,11 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.getProductToWishlistStatus
           : getProductToWishlistStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus?,
+      removeProductFromWishlistStatus: freezed ==
+              removeProductFromWishlistStatus
+          ? _value.removeProductFromWishlistStatus
+          : removeProductFromWishlistStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus?,
       selectedCategoryIndex: null == selectedCategoryIndex
           ? _value.selectedCategoryIndex
           : selectedCategoryIndex // ignore: cast_nullable_to_non_nullable
@@ -1546,6 +1829,11 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.getProductToWishlistFailure
           : getProductToWishlistFailure // ignore: cast_nullable_to_non_nullable
               as Failures?,
+      removeProductFromWishlistFailure: freezed ==
+              removeProductFromWishlistFailure
+          ? _value.removeProductFromWishlistFailure
+          : removeProductFromWishlistFailure // ignore: cast_nullable_to_non_nullable
+              as Failures?,
     ) as $Val);
   }
 }
@@ -1564,6 +1852,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       RequestStatus? getCategoriesTabStatus,
       RequestStatus? addProductToWishlistStatus,
       RequestStatus? getProductToWishlistStatus,
+      RequestStatus? removeProductFromWishlistStatus,
       int selectedCategoryIndex,
       int currentIndex,
       int wishListLength,
@@ -1576,7 +1865,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       Failures? brandsFailure,
       Failures? subCategoriesFailure,
       Failures? addProductToWishlistFailure,
-      Failures? getProductToWishlistFailure});
+      Failures? getProductToWishlistFailure,
+      Failures? removeProductFromWishlistFailure});
 }
 
 /// @nodoc
@@ -1595,6 +1885,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? getCategoriesTabStatus = freezed,
     Object? addProductToWishlistStatus = freezed,
     Object? getProductToWishlistStatus = freezed,
+    Object? removeProductFromWishlistStatus = freezed,
     Object? selectedCategoryIndex = null,
     Object? currentIndex = null,
     Object? wishListLength = null,
@@ -1608,6 +1899,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? subCategoriesFailure = freezed,
     Object? addProductToWishlistFailure = freezed,
     Object? getProductToWishlistFailure = freezed,
+    Object? removeProductFromWishlistFailure = freezed,
   }) {
     return _then(_$HomeStateImpl(
       getCategoriesStatus: null == getCategoriesStatus
@@ -1630,6 +1922,11 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.getProductToWishlistStatus
           : getProductToWishlistStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus?,
+      removeProductFromWishlistStatus: freezed ==
+              removeProductFromWishlistStatus
+          ? _value.removeProductFromWishlistStatus
+          : removeProductFromWishlistStatus // ignore: cast_nullable_to_non_nullable
+              as RequestStatus?,
       selectedCategoryIndex: null == selectedCategoryIndex
           ? _value.selectedCategoryIndex
           : selectedCategoryIndex // ignore: cast_nullable_to_non_nullable
@@ -1682,6 +1979,11 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.getProductToWishlistFailure
           : getProductToWishlistFailure // ignore: cast_nullable_to_non_nullable
               as Failures?,
+      removeProductFromWishlistFailure: freezed ==
+              removeProductFromWishlistFailure
+          ? _value.removeProductFromWishlistFailure
+          : removeProductFromWishlistFailure // ignore: cast_nullable_to_non_nullable
+              as Failures?,
     ));
   }
 }
@@ -1695,6 +1997,7 @@ class _$HomeStateImpl implements _HomeState {
       this.getCategoriesTabStatus = RequestStatus.init,
       this.addProductToWishlistStatus = RequestStatus.init,
       this.getProductToWishlistStatus = RequestStatus.init,
+      this.removeProductFromWishlistStatus = RequestStatus.init,
       this.selectedCategoryIndex = 0,
       this.currentIndex = 0,
       this.wishListLength = 0,
@@ -1707,7 +2010,8 @@ class _$HomeStateImpl implements _HomeState {
       this.brandsFailure,
       this.subCategoriesFailure,
       this.addProductToWishlistFailure,
-      this.getProductToWishlistFailure});
+      this.getProductToWishlistFailure,
+      this.removeProductFromWishlistFailure});
 
   @override
   @JsonKey()
@@ -1724,6 +2028,9 @@ class _$HomeStateImpl implements _HomeState {
   @override
   @JsonKey()
   final RequestStatus? getProductToWishlistStatus;
+  @override
+  @JsonKey()
+  final RequestStatus? removeProductFromWishlistStatus;
   @override
   @JsonKey()
   final int selectedCategoryIndex;
@@ -1753,10 +2060,12 @@ class _$HomeStateImpl implements _HomeState {
   final Failures? addProductToWishlistFailure;
   @override
   final Failures? getProductToWishlistFailure;
+  @override
+  final Failures? removeProductFromWishlistFailure;
 
   @override
   String toString() {
-    return 'HomeState(getCategoriesStatus: $getCategoriesStatus, getBrandsStatus: $getBrandsStatus, getCategoriesTabStatus: $getCategoriesTabStatus, addProductToWishlistStatus: $addProductToWishlistStatus, getProductToWishlistStatus: $getProductToWishlistStatus, selectedCategoryIndex: $selectedCategoryIndex, currentIndex: $currentIndex, wishListLength: $wishListLength, subCategoriesModel: $subCategoriesModel, categoriesModel: $categoriesModel, brandsModel: $brandsModel, wishListModel: $wishListModel, getWishListModel: $getWishListModel, categoriesFailure: $categoriesFailure, brandsFailure: $brandsFailure, subCategoriesFailure: $subCategoriesFailure, addProductToWishlistFailure: $addProductToWishlistFailure, getProductToWishlistFailure: $getProductToWishlistFailure)';
+    return 'HomeState(getCategoriesStatus: $getCategoriesStatus, getBrandsStatus: $getBrandsStatus, getCategoriesTabStatus: $getCategoriesTabStatus, addProductToWishlistStatus: $addProductToWishlistStatus, getProductToWishlistStatus: $getProductToWishlistStatus, removeProductFromWishlistStatus: $removeProductFromWishlistStatus, selectedCategoryIndex: $selectedCategoryIndex, currentIndex: $currentIndex, wishListLength: $wishListLength, subCategoriesModel: $subCategoriesModel, categoriesModel: $categoriesModel, brandsModel: $brandsModel, wishListModel: $wishListModel, getWishListModel: $getWishListModel, categoriesFailure: $categoriesFailure, brandsFailure: $brandsFailure, subCategoriesFailure: $subCategoriesFailure, addProductToWishlistFailure: $addProductToWishlistFailure, getProductToWishlistFailure: $getProductToWishlistFailure, removeProductFromWishlistFailure: $removeProductFromWishlistFailure)';
   }
 
   @override
@@ -1770,14 +2079,15 @@ class _$HomeStateImpl implements _HomeState {
                 other.getBrandsStatus == getBrandsStatus) &&
             (identical(other.getCategoriesTabStatus, getCategoriesTabStatus) ||
                 other.getCategoriesTabStatus == getCategoriesTabStatus) &&
-            (identical(other.addProductToWishlistStatus,
-                    addProductToWishlistStatus) ||
+            (identical(other.addProductToWishlistStatus, addProductToWishlistStatus) ||
                 other.addProductToWishlistStatus ==
                     addProductToWishlistStatus) &&
-            (identical(other.getProductToWishlistStatus,
-                    getProductToWishlistStatus) ||
+            (identical(other.getProductToWishlistStatus, getProductToWishlistStatus) ||
                 other.getProductToWishlistStatus ==
                     getProductToWishlistStatus) &&
+            (identical(other.removeProductFromWishlistStatus, removeProductFromWishlistStatus) ||
+                other.removeProductFromWishlistStatus ==
+                    removeProductFromWishlistStatus) &&
             (identical(other.selectedCategoryIndex, selectedCategoryIndex) ||
                 other.selectedCategoryIndex == selectedCategoryIndex) &&
             (identical(other.currentIndex, currentIndex) ||
@@ -1800,37 +2110,41 @@ class _$HomeStateImpl implements _HomeState {
                 other.brandsFailure == brandsFailure) &&
             (identical(other.subCategoriesFailure, subCategoriesFailure) ||
                 other.subCategoriesFailure == subCategoriesFailure) &&
-            (identical(other.addProductToWishlistFailure,
-                    addProductToWishlistFailure) ||
+            (identical(other.addProductToWishlistFailure, addProductToWishlistFailure) ||
                 other.addProductToWishlistFailure ==
                     addProductToWishlistFailure) &&
-            (identical(other.getProductToWishlistFailure,
-                    getProductToWishlistFailure) ||
+            (identical(other.getProductToWishlistFailure, getProductToWishlistFailure) ||
                 other.getProductToWishlistFailure ==
-                    getProductToWishlistFailure));
+                    getProductToWishlistFailure) &&
+            (identical(other.removeProductFromWishlistFailure,
+                    removeProductFromWishlistFailure) ||
+                other.removeProductFromWishlistFailure == removeProductFromWishlistFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      getCategoriesStatus,
-      getBrandsStatus,
-      getCategoriesTabStatus,
-      addProductToWishlistStatus,
-      getProductToWishlistStatus,
-      selectedCategoryIndex,
-      currentIndex,
-      wishListLength,
-      subCategoriesModel,
-      categoriesModel,
-      brandsModel,
-      wishListModel,
-      getWishListModel,
-      categoriesFailure,
-      brandsFailure,
-      subCategoriesFailure,
-      addProductToWishlistFailure,
-      getProductToWishlistFailure);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        getCategoriesStatus,
+        getBrandsStatus,
+        getCategoriesTabStatus,
+        addProductToWishlistStatus,
+        getProductToWishlistStatus,
+        removeProductFromWishlistStatus,
+        selectedCategoryIndex,
+        currentIndex,
+        wishListLength,
+        subCategoriesModel,
+        categoriesModel,
+        brandsModel,
+        wishListModel,
+        getWishListModel,
+        categoriesFailure,
+        brandsFailure,
+        subCategoriesFailure,
+        addProductToWishlistFailure,
+        getProductToWishlistFailure,
+        removeProductFromWishlistFailure
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -1846,6 +2160,7 @@ abstract class _HomeState implements HomeState {
       final RequestStatus? getCategoriesTabStatus,
       final RequestStatus? addProductToWishlistStatus,
       final RequestStatus? getProductToWishlistStatus,
+      final RequestStatus? removeProductFromWishlistStatus,
       final int selectedCategoryIndex,
       final int currentIndex,
       final int wishListLength,
@@ -1858,7 +2173,8 @@ abstract class _HomeState implements HomeState {
       final Failures? brandsFailure,
       final Failures? subCategoriesFailure,
       final Failures? addProductToWishlistFailure,
-      final Failures? getProductToWishlistFailure}) = _$HomeStateImpl;
+      final Failures? getProductToWishlistFailure,
+      final Failures? removeProductFromWishlistFailure}) = _$HomeStateImpl;
 
   @override
   RequestStatus get getCategoriesStatus;
@@ -1870,6 +2186,8 @@ abstract class _HomeState implements HomeState {
   RequestStatus? get addProductToWishlistStatus;
   @override
   RequestStatus? get getProductToWishlistStatus;
+  @override
+  RequestStatus? get removeProductFromWishlistStatus;
   @override
   int get selectedCategoryIndex;
   @override
@@ -1896,6 +2214,8 @@ abstract class _HomeState implements HomeState {
   Failures? get addProductToWishlistFailure;
   @override
   Failures? get getProductToWishlistFailure;
+  @override
+  Failures? get removeProductFromWishlistFailure;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

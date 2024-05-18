@@ -56,12 +56,23 @@ class HomeRepoImplement implements HomeRepo {
   }
 
   @override
-  Future<Either<Failures, GetWishListModel>> getProductToWishList() async{
-   try{
-     var result = await homeRemoteDS.getProductToWishList();
-     return Right(result);
-   }catch(e){
-     return Left(RemoteFailure(e.toString()));
-   }
+  Future<Either<Failures, GetWishListModel>> getProductToWishList() async {
+    try {
+      var result = await homeRemoteDS.getProductToWishList();
+      return Right(result);
+    } catch (e) {
+      return Left(RemoteFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failures, GetWishListModel>> removeProductFromWishList(
+      String productId) async {
+    try {
+      var result = await homeRemoteDS.removeProductFromWishList(productId);
+      return Right(result);
+    } catch (e) {
+      return Left(RemoteFailure(e.toString()));
+    }
   }
 }
